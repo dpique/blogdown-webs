@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://vigilant-murdock-45ce60.netlify.com"
 languageCode = "en-us"
 title = "Daniel Pique's website"
 theme = "hugo-lithium-theme"
