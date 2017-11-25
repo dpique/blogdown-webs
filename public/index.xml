@@ -36,7 +36,8 @@
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>Hello! Thank you for visiting my site!
+I develop tools to gain insights into cancer from high-throughput genomics sequencing data. I am currently an MD/PhD student at the Albert Einstein College of Medicine (Bronx, NY) in the Department of Systems and Computational Biology. I am interested in the application of machine learning methods to high-throughput sequencing data to identify novel oncogenes and drug targets in cancer. I am also interested in streamlining patients&amp;rsquo; visits to medical clinics.</description>
     </item>
     
     <item>
@@ -72,6 +73,17 @@ Thesis title: Characterization of novel oncogene candidates in invasive breast c
 Minor: Spanish
 Certificate in Interdisciplinary Writing
   Publications  Pique, D., Greally, J. and Mar, J. (2017). oncomix: Identifying Genes Overexpressed in Subsets of Tumors from Tumor-Normal mRNA Expression Data. R package version 1.0.0.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/</guid>
+      <description>Below are some resources that I have found useful related to data science:
+ R for Data Science
+   </description>
     </item>
     
   </channel>

@@ -78,6 +78,10 @@
   </url>
   
   <url>
+    <loc>/resources/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2017-11-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
