@@ -1,4 +1,4 @@
-baseurl = "https://dpique.netlify.com"
+baseurl = "https://dpique.rbind.io"
 languageCode = "en-us"
 title = "Daniel Pique's website"
 theme = "hugo-lithium-theme"
