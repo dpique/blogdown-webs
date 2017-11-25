@@ -13,6 +13,9 @@
     {{ partial "footer_highlightjs" . }}
     {{ partial "footer_mathjax" . }}
     {{ template "_internal/google_analytics.html" . }}
-    {{ template "_internal/disqus.html" . }}
+    {{ if .IsPage }}
+      {{ template "_internal/disqus.html" . }}
+    {{ end }}
+    
   </body>
 </html>
