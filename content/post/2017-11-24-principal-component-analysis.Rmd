@@ -1,0 +1,214 @@
+---
+title: Principal Component Analysis
+author: Daniel Pique
+date: '2017-11-24'
+slug: principal-component-analysis
+categories: []
+tags:
+  - dimensionality reduction
+---
+## The purpose of this tutorial is to understand PCA and to be able to carry out the basic visualizations associated with PCA in R.
+
+### What is the purpose of PCA?
+
+In two words: dimensionality reduction. Basically, we use linear algebra to transform the original variables into a new set of variables called Principal Components (PCs). The number of original observations and variables stays the same, but the new variables are ordered by how much variance they explain in the data. This data matrix D is an N x P matrix, with each row corresponding to one of N samples/observations, and each of P variables as columns.
+
+
+
+- The covariance between two normalized variables *is* the correlation coefficient.
+
+How do we conduct PCA in R?
+
+1. First, we need some data, `d`.
+```{r}
+d = matrix(rnorm(40, 4, 5), nrow = 10, ncol = 4)
+rownames(d) = paste0("Pt_", letters[1:10])
+colnames(d) = paste0("Var_", 1:4)
+d #a matrix with 10 observations and 4 variables
+```
+
+In this case, we have 10 patients (observations), `Pt_1` through `Pt_10`, and 4 variables, `Var_1` through `Var_4`. These variables are gene expression levels from 4 genes measured from each patient's blood.
+
+2. Our next step is to standardize our variables. This includes, for each variable, centering the mean around 0 and scaling the variance to equal 1. Depending on your data, a [log, Box-Cox, or other transformation](https://www.isixsigma.com/tools-templates/normality/tips-recognizing-and-transforming-non-normal-data/) may be required to make the variables look more like a standard normal distribution. Why? [PCA works best](https://www.quora.com/Are-there-implicit-Gaussian-assumptions-in-the-use-of-PCA-principal-components-analysis) when the variables have a joint multivariate Normal (Gaussian) distribution, though this does not stop you from applying PCA to non-normal data, such as genotype data (which consists of the integers 0, 1, & 2).
+
+
+```{r}
+dctr = apply(d, 2, function(x) x - mean(x)) #mean-center the variables
+dctr.std = apply(dctr, 2, function(x) x / sd(x))
+```
+
+3. Next, we calculate the covariance of `dctr.std`, and observe that it is equivalent to the correlation matrix when the variables have a mean of 0 and standard deviation 1. Note that the variance of each variable is shown along the main diagonal, and the covariance of each variable with the other variables is shown in the off diagonal. 
+
+```{r}
+dctr.std.c = cov(dctr.std)
+dctr.std.c #same as cor matrix with unit std dev & 0 mean
+all.equal(dctr.std.c, cor(dctr.std))
+```
+
+There are two important things to note about the `dctr.std.c` covariance matrix:
+  - 1. It is square ($P x P$). This means that we can apply techniques that describe square matrices, such as eigenvalues and eigenvectors (Step 4). Note that the eigenvalues are closely related to the trace, determinant, and rank, all of which are additional features of square matrices.
+  - 2. It is symmetric (`dctr.std.c = t(dctr.std.c)`) about the diagonal. It is also positive semi-definite, which is a common type of matrix in statistics to compute on.
+  
+
+
+4. The next step is to extract the eigenvalues & eigenvectors of the covariance matrix `dctr.std.c`. We do that in 1 step with `eigen`.
+
+```{r}
+d.c.e = eigen(dctr.std.c)
+
+pca = prcomp(dctr.std)
+```
+
+
+5. We'll then inspect the eigenvectors. There should be as many eigenvectors as there are original variables, and the eigenvectors are all perpendicular to each other. The length of the eigenvector is 1, by convention. This is similar to pythagoras' theorem, whereby the sum of the squares gives you the Euclidian distance (L2 norm)
+
+```{r}
+
+## first we look at the eigenvectors of the covariance matrix.
+## each column in this matrix is an eigenvector
+d.c.e$vectors
+
+sqrt(sum(d.c.e$vectors[,1]^2)) #length of 1st eigenvector = 1
+sqrt(sum(d.c.e$vectors[,2]^2)) #length of 2nd eigenvector = 1
+
+## the dot product of any 2 eigenvectors is 0
+## which means they are perpendicular to each other
+d.c.e$vectors[,1] %*% d.c.e$vectors[,2]
+```
+
+- Another name for the covariance matrix `dctr.std.c` is the **transformation matrix**, which transforms the coordinate space. We are looking for column vectors (eigenvectors) of `d.c.e` that, when multiplied on the right of the covariance (transformation) matrix, yield the same vector, but scaled. The degree to which they are scaled are the eigenvalues. This is the same as saying $A\lambda = c\lambda$, where c is a constant equal to the eigenvalue. A is the transformation matrix, and lambda is the eigenvector. This is illustrated below with the first eigenvector/value:
+
+
+```{r}
+## the covariance of the data * the 1st eigenvector...
+dctr.std.c %*% matrix(d.c.e$vectors[,1], ncol=1)
+
+##...equals the scale factor * the 1st eigenvector
+d.c.e$values[1] * matrix(d.c.e$vectors[,1], ncol=1) 
+```
+
+6. We'll now inspect the eigenvalues of the covariance matrix. The eigenvalues are linearly decreasing, positive numbers. [The normalized sum of the eigenvalues](https://www.youtube.com/watch?v=5zk93CpKYhg) represents the variance explained by each eigenvector.
+
+
+```{r}
+#eigenvalues
+d.c.e$values 
+
+#plot the percent variance explained by each PC
+perc_var <- d.c.e$values/sum(d.c.e$values)
+plot(1:length(perc_var), perc_var, xlab="index", ylab="% variance")
+```
+
+7. Now that we have these eigenvectors (ie new orthogonal coordinates that describe the variance in the data), we must transform our original data into this new coordinate space. Our new data will have the same dimensions. To do this, we'll multiply our the original scaled dataset by the eigenvectors. If we wanted only 2 variables (for visualization purposes) we could also do that.
+
+```{r}
+## centered variables * eigenvectors
+## should equal prcomp(dctr.std)$x
+new.vars = dctr.std %*% d.c.e$vectors
+
+## This works too:
+## new.vars.3 = dctr.std %*% d.c.e$vectors[1:3,]
+```
+
+8. There are a few interesting properties of these new variables. First, these new variables are all uncorrelated with each other, as can be seen with the 0's in the off diagonals in the covariance matrix. The variance of each new variable can be found in the diagonal entries in the covariance matrix between all values. The variance of each variable is also equal to the eigenvalues. Each variable is still centered at 0 as well.
+
+```{r}
+#all the new variables are uncorrelated (0 covariance!)
+round(cov(new.vars), 3) 
+
+var(new.vars[,1])
+d.c.e$values
+
+cov(prcomp(dctr.std)$x) #this is the same as the line above
+diag(prcomp(dctr.std)$sdev^2) #this is the same as the line above
+
+colSums(new.vars) #equal 0, so these are still 0-centered!
+```
+
+
+9. So we performed a linear transformation of our original scaled variables into this new coordinate space. Shouldn't we be able to transform these variables back into the original scaled variables? Yes!
+
+```{r}
+## how do we get back the original data from eigenvectors/values?
+## multiply the eigenvectors by the rotated variables
+all.equal(t(d.c.e$vectors %*% t(new.vars)), dctr.std)
+
+## returns the original data
+all.equal(t(d.c.e$vectors %*% t(new.vars))+ d - dctr.std, d)
+
+```
+
+10. Here are a few things to remember about linear transformations:
+- Linear transformations are the specialty of *linear* algebra (as opposed to *nonlinear* transformations)
+- Linear transformations are represented by matrices, known as transformation matrix (TMs).
+- TMs, when multiplied to the left of vectors that have unit variance, transform the vector into the new transformed coordinate space (e.g. shear in 2d)
+- The covariance matrix functions as a transformation matrix.
+
+11. The whole pca procedure can be implemented with built in functions in R or by using the singular value decomposition on the covariance matrix.
+
+```{r}
+pca = prcomp(d, center = T, scale. = T)
+all.equal(pca$rotation %*% t(pca$x) , t(dctr.std))
+
+#these are almost equal, the 1st column of pca$x is *-1 
+#of the 1st column of new.vars
+pca$x; new.vars
+
+#svd on covariance matrix
+dctr.c.svd = svd(dctr.std.c) 
+all.equal(dctr.c.svd$d, d.c.e$values) #eigenvalues, same as d.c.e$values
+
+#these are almost equal, one is the negative of the other
+dctr.c.svd$u; d.c.e$vectors
+
+```
+
+- Scatterplot of new variables
+```{r}
+plot(new.vars[1,], new.vars[2,], xlab=paste0("PC1: ", round(perc_var[1],2)*100, "% of variance"), ylab=paste0("PC2: ", round(perc_var[2],2)*100, "% of variance"))
+```
+
+- BiPlots - projecting the original variable directions onto the new PC space. 
+
+https://youtu.be/JEYLfIVvR9I
+
+```{r}
+x <- pca
+scores <- x$x
+choices=1L:2L
+scale = 1
+n <- NROW(scores)
+
+lam <- x$sdev[choices]
+lam <- lam * sqrt(n)
+lam <- lam^scale
+scores[,choices]/lam
+t(t(scores[, choices])/lam) 
+# samples in PC space
+#divided by lambda
+t(t(x$rotation[, choices]) * lam) 
+#original variable directions in PC space
+#multiplied by lambda
+
+```
+
+- Principle component permutation
+```{r}
+
+```
+
+
+## Additional resources on PCA
+
+### Videos
+- https://www.youtube.com/watch?v=ZqXnPcyIAL8
+- https://youtu.be/_UVHneBUBW0
+- https://www.youtube.com/watch?v=5zk93CpKYhg
+
+### Blog tutorials
+http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca
+https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
+
+### Papers
+https://www.cs.cmu.edu/~elaw/papers/pca.pdf
+http://www.iro.umontreal.ca/~pift6080/H09/documents/papers/pca_tutorial.pdf
