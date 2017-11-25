@@ -2,7 +2,7 @@ baseurl = "https://dpique.netlify.com"
 languageCode = "en-us"
 title = "Daniel Pique's website"
 theme = "hugo-lithium-theme"
-googleAnalytics = ""
+googleAnalytics = "UA-97059643-2"
 disqusShortname = "blogdown-webs"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
