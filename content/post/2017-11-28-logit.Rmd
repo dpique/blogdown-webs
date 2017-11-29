@@ -1,0 +1,23 @@
+---
+title: The difference between log odds, logit, and logistic transformation
+author: Daniel Pique
+date: 'November 28, 2017'
+categories: []
+tags:
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+logit(p) <- log(p/(1-p)) #this is appropriately called the log odds. The "odds" are a ratio between 2 events -- the probability of the event happening (p) and not happening (1-p). We see this as p/(1-p). The odds are wrapped in a *log*arithm -- hence the *log*-odds.
+
+It is used to transform probabilities on the open interval (0,1) to the Real number line.
+
+The distribution of many of these mapped probability values is often assumed to have a Normal distribution. (?) This can help in Bayesian sampling frameworks to make it more convenient to sample from the posterior distribution. (?)
+
+Mnemonic -- the word 'logit' is small (compared to the word logistic), and so only relative constrained interval of probabilities can be passed through the logit function.
+
+the inverse logit takes you from logit values back to probabilities. You can use either formula. $e^v /1+e^v$.
+
+Whats the relationship between the Gaussian and the logit )
