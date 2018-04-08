@@ -1,14 +1,11 @@
 ---
-title: The difference between log odds, logit, and logistic transformation
+title: logit
 author: Daniel Pique
-date: 'November 28, 2017'
+date: '2017-11-28'
+slug: logit
 categories: []
-tags:
+tags: []
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 logit(p) <- log(p/(1-p)) #this is appropriately called the log odds. The "odds" are a ratio between 2 events -- the probability of the event happening (p) and not happening (1-p). We see this as p/(1-p). The odds are wrapped in a *log*arithm -- hence the *log*-odds.
 
@@ -20,4 +17,4 @@ Mnemonic -- the word 'logit' is small (compared to the word logistic), and so on
 
 the inverse logit takes you from logit values back to probabilities. You can use either formula. $e^v /1+e^v$.
 
-Whats the relationship between the Gaussian and the logit )
+Whats the relationship between the Gaussian and the logit?

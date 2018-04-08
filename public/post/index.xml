@@ -6,10 +6,42 @@
     <description>Recent content in Posts on Daniel Pique&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computational resources and best practices for your PhD</title>
+      <link>/2018/04/07/computational-resources-and-best-practices-for-your-phd/</link>
+      <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/07/computational-resources-and-best-practices-for-your-phd/</guid>
+      <description>Below are some computer-related things that you need to do or know about while doing your PhD at Einstein. I have supplemented and customized this list with the resources that Einstein offers to facilitate this. The resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different resources.
+Below are some computational resources offered by Einstein, along with people you should get in touch with to obtain these resources.</description>
+    </item>
+    
+    <item>
+      <title>How to access and work on Einstein&#39;s HPC cluster</title>
+      <link>/2017/11/29/introduction-to-einstein-s-hpc-cluster/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/29/introduction-to-einstein-s-hpc-cluster/</guid>
+      <description>Request access to the cluster. This can be done by emailing Brent Solly or Shailesh Shenoy and asking to be added as a user. An account and userid will be created for you. You can also submit a ticket through the IT support portal to request account access.
+ Open up a terminal (Mac/Linux) or command prompt (Windows)
+ In the prompt, type ssh user_id@ip_address, where user_id is your montefiore ID/username, and ip_address is the IP address shared with you by the IT team (should start with the number 10 and be in the following format: 10.</description>
+    </item>
+    
+    <item>
+      <title>logit</title>
+      <link>/2017/11/28/logit/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/28/logit/</guid>
+      <description>logit(p) &amp;lt;- log(p/(1-p)) #this is appropriately called the log odds. The “odds” are a ratio between 2 events – the probability of the event happening (p) and not happening (1-p). We see this as p/(1-p). The odds are wrapped in a logarithm – hence the log-odds.
+It is used to transform probabilities on the open interval (0,1) to the Real number line.
+The distribution of many of these mapped probability values is often assumed to have a Normal distribution.</description>
+    </item>
     
     <item>
       <title>Principal Component Analysis</title>
@@ -17,37 +49,16 @@
       <pubDate>Fri, 24 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/24/principal-component-analysis/</guid>
-      <description>The purpose of this tutorial is to understand PCA and to be able to carry out the basic visualizations associated with PCA in R.What is the purpose of PCA?In two words: dimensionality reduction. Basically, we use linear algebra to transform the original variables into a new set of variables called Principal Components (PCs). The number of original observations and variables stays the same, but the new variables are ordered by how much variance they explain in the data.</description>
+      <description>The purpose of this tutorial is to understand PCA and to be able to carry out the basic visualizations associated with PCA in R. What is the purpose of PCA? In two words: dimensionality reduction. Basically, we use linear algebra to transform the original variables into a new set of variables called Principal Components (PCs). The number of original observations and variables stays the same, but the new variables are ordered by how much variance they explain in the data.</description>
     </item>
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <title></title>
+      <link>/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>/1/01/01/</guid>
+      <description>How to access and work on Einstein’s HPC cluster      h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .table th:not([align]) { text-align: left; }    .main-container { max-width: 940px; margin-left: auto; margin-right: auto; } code { color: inherit; background-color: rgba(0, 0, 0, 0.</description>
     </item>
     
   </channel>
