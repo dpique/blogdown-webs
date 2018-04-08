@@ -1,0 +1,73 @@
+---
+title: Computational resources and best practices for your PhD
+author: Daniel Pique
+date: '2018-04-07'
+slug: computational-resources-and-best-practices-for-your-phd
+categories:
+  - Resources
+tags:
+  - Dropbox
+  - Google drive
+  - inSync
+  - Einstein
+  - Lab notebook
+---
+
+Below are some computer-related things that you need to do or know about while doing your PhD at Einstein. I have supplemented and customized this list with the resources that Einstein offers to facilitate this. The resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different resources.  
+Below are some computational resources offered by Einstein, along with people you should get in touch with to obtain these resources. I divide these best practices into essentials, for every student, and optionals, useful for those doing computationally intensive work. I also include some freely available resources not specific to Einstein but that may be helpful to students generally, along with links to 
+
+### Essentials
+
+##### 1. Backing up your work
+
+  **Where can I back up my work?**
+
+ - You can back up your work and personal computers/devices through inSync, a cloud-based back up system. Einstein offers inSync for free, and this service comes with unlimited storage, automatic backups at time intervals that you specify, and backups for up to 10 devices. Note that backed up data are kept private.
+ - To get started with inSync, submit a ticket to the [Einstein IT support website](https://itsupport.einstein.yu.edu/). Note that you have to be on Einstein's campus to access this website:
+
+
+  - Another option is Google backup and sync (also see below): https://www.google.com/drive/download/backup-and-sync/
+  - You don't need to contact anyone for this, just download backup and sync and start backing up all your files to google drive (you have unlimited storage through Einstein gmail/google account)
+
+##### 2. Maintaining a lab notebook 
+
+  **How do I organize my analyses/experiments and daily tasks?**
+
+  - Be prepared to spend a considerable amount of time maintaining a lab notebook. A good notebook requires sustained daily effort but can really pay off. PIs will often pay attention to your lab notebook, and it can be impressive to have a well-organized one. The lab notebook can be electronic (ELN) or paper copy, ask your PI if he/she has a preference.
+- There are several ideas good free tools and ideas related to ELNs. There's not one solution that best fits all. I would definitely consider electronic lab notebooks (ELN), even if you're doing experimental work. Automatic backups, accessibility from anywhere, ability to add timestamps, and shareability with your PI (or others) would be a few of the advantages of the ELN.
+- Below are a few papers/links that discuss how to set up and organize a lab notebook. Browse around, mix and match ideas, and see what works for you.
+- http://colinpurrington.com/tips/lab-notebooks
+- http://plantscience.psu.edu/research/labs/roots/methods/computer/onenote
+
+##### 3. Reference managers
+
+  **How do I manage my references?**
+
+Mendeley reference management (free), not specific to Einstein. Use the online plug-in to add citations and download pdfs automatically while you are browsing. Makes it easy to create bibliographies and in-text citations.
+
+### Useful, but not essential
+
+##### 1. Where can I store my large data files?
+
+- Unlimited storage is available on your Einstein account google drive. Can store huge files on here like RNA-seq, fastq, etc.
+
+- Dropbox Business account (Einstein) is available for employees/students with 1PB of shared storage. You can email ricardo.justiniano@einstein.yu.edu and ask him to join.
+
+##### 2. Where can I perform computationally intensive tasks?
+- On Einstein's high performance computing (HPC) cluster. See [this post](http://dpique.rbind.io/2017/11/29/introduction-to-einstein-s-hpc-cluster/) for more information on how to get set up. 
+
+##### 3. What other commonly used software is available through Einstein?
+
+The websites below list software provided by Einstein. Note that Einstein provides Microsoft Office and Adobe creative cloud, among other software, for free, so no need to purchase these. There's also a list available through [Einstein IT support website](https://itsupport.einstein.yu.edu/).
+
+https://www.einstein.yu.edu/research/research-computing/specialty-software-information.aspx
+http://www.einstein.yu.edu/research/research-computing/computing.aspx?id=35482
+http://einstein.yu.edu/departments/neuroscience/administration/maurice-volaski.aspx
+https://www.einstein.yu.edu/centers/cancer/default.aspx?id=52662
+
+Basically, keep poking around and asking until you find the resources you need. You can always submit a ticket to the IT help desk, and they are pretty responsive. 
+
+##### 4. How do I access the Einstein network from off campus?
+
+By using VPN. Submit a ticket through the IT support portal to get set up with this. The portal that you will need to log into is [here](https://secureaccess.montefiore.org/vpn/index.html).
+

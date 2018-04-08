@@ -11,7 +11,7 @@ output:
 ---
 
 
-1. Request access to the cluster. This can be done by emailing [Brent Solly](https://www.einstein.yu.edu/search/?q=brent%20solly&searchType=directories) or [Shailesh Shenoy](https://www.einstein.yu.edu/search/?q=Shailesh+Shenoy&searchButton.x=0&searchButton.y=0&searchType=directories) and asking to be added as a user. An account and userid will be created for you.
+1. Request access to the cluster. This can be done by emailing [Brent Solly](https://www.einstein.yu.edu/search/?q=brent%20solly&searchType=directories) or [Shailesh Shenoy](https://www.einstein.yu.edu/search/?q=Shailesh+Shenoy&searchButton.x=0&searchButton.y=0&searchType=directories) and asking to be added as a user. An account and userid will be created for you. You can also submit a ticket through the [IT support portal](https://itsupport.einstein.yu.edu/) to request account access.
 
 2. Open up a terminal (Mac/Linux) or command prompt (Windows)
 
