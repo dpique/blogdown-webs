@@ -17,8 +17,7 @@
       <pubDate>Sat, 07 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/04/07/computational-resources-and-best-practices-for-your-phd/</guid>
-      <description>Below are some computer-related things that you need to do or know about while doing your PhD at Einstein. I have supplemented and customized this list with the resources that Einstein offers to facilitate this. The resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different resources.
-Below are some computational resources offered by Einstein, along with people you should get in touch with to obtain these resources.</description>
+      <description>Below are some best practices and computational resources offered by Einstein, along with links to how you can obtain these resources. I divide these resources/best practices into essentials, for every PhD student, and useful/non-essential, which will be useful mainly for those doing computationally intensive work. Einstein’s resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different tips and resources. I also include some freely available resources not specific to Einstein but that may be helpful to students generally.</description>
     </item>
     
     <item>
@@ -94,7 +93,8 @@ Certificate in Interdisciplinary Writing
       <guid>/resources/</guid>
       <description>Below are some resources that I have found useful related to data science:
  R for Data Science
-   </description>
+ Peerj - practical data science. This is a collection of articles that discuss best practices for data collection and analysis.
+  </description>
     </item>
     
   </channel>

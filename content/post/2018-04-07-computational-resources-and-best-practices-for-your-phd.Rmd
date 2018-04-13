@@ -13,12 +13,11 @@ tags:
   - Lab notebook
 ---
 
-Below are some computer-related things that you need to do or know about while doing your PhD at Einstein. I have supplemented and customized this list with the resources that Einstein offers to facilitate this. The resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different resources.  
-Below are some computational resources offered by Einstein, along with people you should get in touch with to obtain these resources. I divide these best practices into essentials, for every student, and optionals, useful for those doing computationally intensive work. I also include some freely available resources not specific to Einstein but that may be helpful to students generally, along with links to 
+Below are some best practices and computational resources offered by Einstein, along with links to how you can obtain these resources. I divide these resources/best practices into essentials, for every PhD student, and useful/non-essential, which will be useful mainly for those doing computationally intensive work. Einstein's resources are a bit spread out across multiple websites, but hopefully this list helps synthesize these different tips and resources. I also include some freely available resources not specific to Einstein but that may be helpful to students generally.
 
-### Essentials
+## Essentials
 
-##### 1. Backing up your work
+#### 1. Backing up your work
 
   **Where can I back up my work?**
 
@@ -29,7 +28,7 @@ Below are some computational resources offered by Einstein, along with people yo
   - Another option is Google backup and sync (also see below): https://www.google.com/drive/download/backup-and-sync/
   - You don't need to contact anyone for this, just download backup and sync and start backing up all your files to google drive (you have unlimited storage through Einstein gmail/google account)
 
-##### 2. Maintaining a lab notebook 
+#### 2. Maintaining a lab notebook 
 
   **How do I organize my analyses/experiments and daily tasks?**
 
@@ -38,27 +37,29 @@ Below are some computational resources offered by Einstein, along with people yo
 - Below are a few papers/links that discuss how to set up and organize a lab notebook. Browse around, mix and match ideas, and see what works for you.
 - http://colinpurrington.com/tips/lab-notebooks
 - http://plantscience.psu.edu/research/labs/roots/methods/computer/onenote
+- http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424
 
-##### 3. Reference managers
+#### 3. Reference managers
 
   **How do I manage my references?**
 
-Mendeley reference management (free), not specific to Einstein. Use the online plug-in to add citations and download pdfs automatically while you are browsing. Makes it easy to create bibliographies and in-text citations.
+ - [Mendeley reference management](https://www.mendeley.com/) (free), not specific to Einstein. Use the online plug-in to add citations and download pdfs automatically while you are browsing. Makes it easy to create bibliographies and in-text citations.
 
 ### Useful, but not essential
 
-##### 1. Where can I store my large data files?
+#### 1. Where can I store my large data files?
 
 - Unlimited storage is available on your Einstein account google drive. Can store huge files on here like RNA-seq, fastq, etc.
 
 - Dropbox Business account (Einstein) is available for employees/students with 1PB of shared storage. You can email ricardo.justiniano@einstein.yu.edu and ask him to join.
 
-##### 2. Where can I perform computationally intensive tasks?
+#### 2. Where can I perform computationally intensive tasks?
+  
 - On Einstein's high performance computing (HPC) cluster. See [this post](http://dpique.rbind.io/2017/11/29/introduction-to-einstein-s-hpc-cluster/) for more information on how to get set up. 
 
-##### 3. What other commonly used software is available through Einstein?
+#### 3. What other commonly used software is available through Einstein?
 
-The websites below list software provided by Einstein. Note that Einstein provides Microsoft Office and Adobe creative cloud, among other software, for free, so no need to purchase these. There's also a list available through [Einstein IT support website](https://itsupport.einstein.yu.edu/).
+- The websites below list software provided by Einstein. Note that Einstein provides Microsoft Office and Adobe creative cloud, among other software, for free, so no need to purchase these. There's also a list available through [Einstein IT support website](https://itsupport.einstein.yu.edu/).
 
 https://www.einstein.yu.edu/research/research-computing/specialty-software-information.aspx
 http://www.einstein.yu.edu/research/research-computing/computing.aspx?id=35482
