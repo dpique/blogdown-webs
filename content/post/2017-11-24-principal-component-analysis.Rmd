@@ -208,6 +208,7 @@ t(t(x$rotation[, choices]) * lam)
 ### Blog tutorials
 http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca
 https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
+https://plot.ly/ipython-notebooks/principal-component-analysis/
 
 ### Papers
 https://www.cs.cmu.edu/~elaw/papers/pca.pdf

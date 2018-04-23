@@ -7,10 +7,10 @@ Email: daniel.pique@med.einstein.yu.edu
 Education
 ---------
 
-2013–2021 (expected)
+2013–2020 (expected)
 :   **MD-PhD, Systems & Computational Biology**; Einstein (Bronx, NY)
 
-    *Thesis title: Characterization of novel oncogene candidates in invasive breast carcinoma*
+    *Thesis title: Deriving novel insights from genomic heterogeneity in cancer*
     
 2008-2012
 :   **BS, Genetics**; University of Georgia (Athens, GA)
@@ -46,7 +46,7 @@ Programming Languages
 Extracurriculars and Skills
 ----------------------------------------
 
-* Human Languages:
+* Languages:
 
      * English & Spanish (fluent)
 
