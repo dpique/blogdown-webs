@@ -1,0 +1,102 @@
+---
+title: pdf, cdf, and inverse cdf
+author: Daniel Pique
+date: '2018-05-19'
+runtime: shiny
+slug: pdf-cdf-and-inverse-cdf
+categories:
+  - Math
+tags:
+  - probability
+  - pdf
+  - cdf
+  - Gaussian
+  - Logit
+  - Probit
+---
+
+In this post, we will cover the relationship between the probability density function (PDF), the cumulative probability density function (CDF), and the inverse CDF. The inverse CDF is also know as the Quantile function (we'll see why later).
+
+This post stemmed from my interest in transforming a set of values on a [0,1] scale to values corresponsing to those on a Normal distribution. This led to me learning about something called the inverse transform method. Basically, what this says is that we first start off with a uniform sample of values between 0 and 1.
+```{r}
+library(tidyverse)
+#library(ggthemr)
+#install.packages("ggthemr")
+#ggthemr("dust")
+
+u <- runif(n = 100, min = 0, max = 1)
+hist(u)
+
+
+theme_bw2 <- function (base_size = 11, base_family = "") {
+    theme_grey(base_size = base_size, base_family = base_family) %+replace% 
+        theme(#text = element_text(color="black"), 
+              panel.background = element_rect(fill = "white", 
+            colour = NA), panel.border = element_rect(fill = NA, 
+            colour = "black"), panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(),
+                strip.background = element_rect(fill = "grey85", 
+                colour = "black"), legend.key = element_rect(fill = "white", 
+                colour = NA), complete = TRUE)
+}
+
+theme_set(theme_bw2(base_size = 24, base_family = "Helvetica")) #preferred by science ##theme_hc())
+```
+
+Then, for each of these 100 numbers $u_1, u_2, ..., u_{100}$ , we return the largest number from the distribution $N(X, \mu, \sigma))$ such that $N(-\infty < X< x) \leq u_i$. In R, we accomplish this with the function `pnorm`
+
+```{r}
+mu <- 0
+sigma <- 1
+#Transformation from
+#pnorm gives the CDF
+#probability density function
+#qnorm gives the quantile function
+#dnorm gives
+#qnorm(p = )
+qnorm(p = u, mean = mu, sd = sigma) #what is a quantile
+dnorm(0)
+```
+
+The idea is to take the numbers between 0 and 1 and then pass them to the inverse CDF of the desired distribution (in this case the Normal distribution). The inverse CDF of the Normal (aka probit) does not have a closed-form solution, so it is generated using numerical methods. 
+
+
+
+The inverse of `pnorm`, the CDF, is `qnorm`. Rather than take in a quantile and return a probability, qnorm takes in a proability and returns a quantile. A quantile is a value that represents a set number of sd away from 0. The quantile function `qnorm` is also known as the percent-point function or inverse CDF. It takes in the value of 
+
+percent quantile function specifies, for a given probability in the probability distribution of a random variable, the value at which the probability of the random variable $N(\mu, \sigma)$ is less than or equal to the given probability. It is also called the 
+
+In the case of the normal distribution, the quantile function `qnorm` is known as the *probit*.
+
+```{r}
+seq_of_probs <- seq(0, 1, by = 0.01)
+mu <- 5; sigma <- 3
+probit <- qnorm(p = seq_of_probs, mean = mu, sd = sigma)
+plot(seq_of_probs, probit)
+
+```
+
+The *probit* takes in *prob*abil*it*ies and returns the value of the standard normal distribution $N(\mu=0, \sigma=1)$ at which the probability of generating a value less than or equal to that value is the given probability.  The probit function is the quantile function associated with the standard normal distribution.
+
+Note that the probit (ie the inverse CDF) depends on the value of mu and sigma, the same values that the normal distribution depends on. We can explore this below:
+
+# we can also see where each of our generated points land
+```{r}
+u.samp <- sample(u,10)
+prob_df <- data.frame(seq_of_probs, probit)
+
+plot(seq_of_probs, probit)
+abline(v = u.samp)
+abline(h = qnorm(u.samp, mean = mu, sd = sigma))
+
+marks <- data.frame(sampl = u.samp,
+                    quant = qnorm(u.samp, mean = mu, sd = sigma))
+ggplot() + geom_point(data=prob_df, aes(x=seq_of_probs, y= probit)) + 
+   geom_segment(data=marks, aes(x = sampl, y=quant, xend=0, yend=quant)) +
+   geom_segment(data=marks, aes(x = sampl, y=quant, xend=sampl, yend=-Inf)) #+
+
+```
+
+We can transform the uniform numbers to a Gaussian with any parameters mu and sigma because the Gaussian is scale invariant.
+
+

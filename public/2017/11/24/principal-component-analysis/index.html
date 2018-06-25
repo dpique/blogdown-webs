@@ -49,6 +49,8 @@
     
     <li><a href="https://github.com/dpique/">GitHub</a></li>
     
+    <li><a href="/third-year/">M3</a></li>
+    
     <li><a href="/resources/">Resources</a></li>
     
     <li><a href="https://twitter.com/dpique12">Twitter</a></li>
@@ -89,17 +91,17 @@
 rownames(d) = paste0(&quot;Pt_&quot;, letters[1:10])
 colnames(d) = paste0(&quot;Var_&quot;, 1:4)
 d #a matrix with 10 observations and 4 variables</code></pre>
-<pre><code>##           Var_1     Var_2      Var_3     Var_4
-## Pt_a  6.2823342 -1.289626  1.4576785  4.466958
-## Pt_b  8.2865135 -6.990068  9.5393968  2.244894
-## Pt_c  4.1759034 -1.214622 -1.2072433  8.676498
-## Pt_d  3.6915884 -1.348987  4.5268741 12.164401
-## Pt_e  8.8867650  5.388644  6.4755139  1.681967
-## Pt_f  9.1691437  1.454690  3.6501919 10.820894
-## Pt_g  3.1365921  1.141671 -0.3129707  8.512976
-## Pt_h -0.4548564  7.860579  7.2072110  1.382484
-## Pt_i  3.9510410 11.119503  9.3520675  4.116189
-## Pt_j  3.0438303 13.264645  6.9312697 10.223448</code></pre>
+<pre><code>##           Var_1     Var_2      Var_3      Var_4
+## Pt_a  8.1993293  3.293621 -4.2693064  5.3396259
+## Pt_b  9.1928377  3.098388  5.4872857 10.5218878
+## Pt_c  5.7635860  5.577306 15.0975553  7.7403106
+## Pt_d -0.9175117  1.106165  2.3836037  2.6643246
+## Pt_e  1.8287489  6.573073  3.0889452 -3.4242246
+## Pt_f 14.9311060  9.848152  0.9411515  1.8763958
+## Pt_g -2.5033650  2.213943 -8.6696878  0.5972202
+## Pt_h  8.5534310  3.088214 -1.8370342  2.0028404
+## Pt_i  6.7976075  3.876433  9.6736584 -4.2730160
+## Pt_j 12.6700701 12.421501  8.1345713 12.5480101</code></pre>
 <p>In this case, we have 10 patients (observations), <code>Pt_1</code> through <code>Pt_10</code>, and 4 variables, <code>Var_1</code> through <code>Var_4</code>. These variables are gene expression levels from 4 genes measured from each patient’s blood.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Our next step is to standardize our variables. This includes, for each variable, centering the mean around 0 and scaling the variance to equal 1. Depending on your data, a <a href="https://www.isixsigma.com/tools-templates/normality/tips-recognizing-and-transforming-non-normal-data/">log, Box-Cox, or other transformation</a> may be required to make the variables look more like a standard normal distribution. Why? <a href="https://www.quora.com/Are-there-implicit-Gaussian-assumptions-in-the-use-of-PCA-principal-components-analysis">PCA works best</a> when the variables have a joint multivariate Normal (Gaussian) distribution, though this does not stop you from applying PCA to non-normal data, such as genotype data (which consists of the integers 0, 1, &amp; 2).</li>
@@ -111,11 +113,11 @@ dctr.std = apply(dctr, 2, function(x) x / sd(x))</code></pre>
 </ol>
 <pre class="r"><code>dctr.std.c = cov(dctr.std)
 dctr.std.c #same as cor matrix with unit std dev &amp; 0 mean</code></pre>
-<pre><code>##             Var_1       Var_2       Var_3       Var_4
-## Var_1  1.00000000 -0.44364968  0.05455704 -0.06269753
-## Var_2 -0.44364968  1.00000000  0.36431104 -0.04524648
-## Var_3  0.05455704  0.36431104  1.00000000 -0.47374677
-## Var_4 -0.06269753 -0.04524648 -0.47374677  1.00000000</code></pre>
+<pre><code>##           Var_1     Var_2     Var_3     Var_4
+## Var_1 1.0000000 0.6679919 0.2866649 0.4323310
+## Var_2 0.6679919 1.0000000 0.3526058 0.3209110
+## Var_3 0.2866649 0.3526058 1.0000000 0.2710934
+## Var_4 0.4323310 0.3209110 0.2710934 1.0000000</code></pre>
 <pre class="r"><code>all.equal(dctr.std.c, cor(dctr.std))</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>There are two important things to note about the <code>dctr.std.c</code> covariance matrix: - 1. It is square (<span class="math inline">\(P x P\)</span>). This means that we can apply techniques that describe square matrices, such as eigenvalues and eigenvectors (Step 4). Note that the eigenvalues are closely related to the trace, determinant, and rank, all of which are additional features of square matrices. - 2. It is symmetric (<code>dctr.std.c = t(dctr.std.c)</code>) about the diagonal. It is also positive semi-definite, which is a common type of matrix in statistics to compute on.</p>
@@ -131,11 +133,11 @@ pca = prcomp(dctr.std)</code></pre>
 <pre class="r"><code>## first we look at the eigenvectors of the covariance matrix.
 ## each column in this matrix is an eigenvector
 d.c.e$vectors</code></pre>
-<pre><code>##            [,1]       [,2]      [,3]       [,4]
-## [1,]  0.2881146  0.6711658 0.5494687 -0.4057224
-## [2,] -0.5685421 -0.4291336 0.3928252 -0.5816292
-## [3,] -0.6199300  0.3331537 0.3671862  0.6081691
-## [4,]  0.4576424 -0.5043703 0.6394895  0.3566892</code></pre>
+<pre><code>##           [,1]        [,2]        [,3]       [,4]
+## [1,] 0.5706039  0.36645264 -0.17715598  0.7132597
+## [2,] 0.5580953  0.21233671 -0.44642197 -0.6664460
+## [3,] 0.4030960 -0.90228738 -0.09911756  0.1164768
+## [4,] 0.4477214  0.08064158  0.87149233 -0.1831491</code></pre>
 <pre class="r"><code>sqrt(sum(d.c.e$vectors[,1]^2)) #length of 1st eigenvector = 1</code></pre>
 <pre><code>## [1] 1</code></pre>
 <pre class="r"><code>sqrt(sum(d.c.e$vectors[,2]^2)) #length of 2nd eigenvector = 1</code></pre>
@@ -143,31 +145,31 @@ d.c.e$vectors</code></pre>
 <pre class="r"><code>## the dot product of any 2 eigenvectors is 0
 ## which means they are perpendicular to each other
 d.c.e$vectors[,1] %*% d.c.e$vectors[,2]</code></pre>
-<pre><code>##             [,1]
-## [1,] 1.94289e-16</code></pre>
+<pre><code>##              [,1]
+## [1,] 5.551115e-17</code></pre>
 <ul>
 <li>Another name for the covariance matrix <code>dctr.std.c</code> is the <strong>transformation matrix</strong>, which transforms the coordinate space. We are looking for column vectors (eigenvectors) of <code>d.c.e</code> that, when multiplied on the right of the covariance (transformation) matrix, yield the same vector, but scaled. The degree to which they are scaled are the eigenvalues. This is the same as saying <span class="math inline">\(A\lambda = c\lambda\)</span>, where c is a constant equal to the eigenvalue. A is the transformation matrix, and lambda is the eigenvector. This is illustrated below with the first eigenvector/value:</li>
 </ul>
 <pre class="r"><code>## the covariance of the data * the 1st eigenvector...
 dctr.std.c %*% matrix(d.c.e$vectors[,1], ncol=1)</code></pre>
-<pre><code>##             [,1]
-## Var_1  0.4778336
-## Var_2 -0.9429182
-## Var_3 -1.0281441
-## Var_4  0.7589927</code></pre>
+<pre><code>##            [,1]
+## Var_1 1.2525243
+## Var_2 1.2250667
+## Var_3 0.8848300
+## Var_4 0.9827867</code></pre>
 <pre class="r"><code>##...equals the scale factor * the 1st eigenvector
 d.c.e$values[1] * matrix(d.c.e$vectors[,1], ncol=1) </code></pre>
-<pre><code>##            [,1]
-## [1,]  0.4778336
-## [2,] -0.9429182
-## [3,] -1.0281441
-## [4,]  0.7589927</code></pre>
+<pre><code>##           [,1]
+## [1,] 1.2525243
+## [2,] 1.2250667
+## [3,] 0.8848300
+## [4,] 0.9827867</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>We’ll now inspect the eigenvalues of the covariance matrix. The eigenvalues are linearly decreasing, positive numbers. <a href="https://www.youtube.com/watch?v=5zk93CpKYhg">The normalized sum of the eigenvalues</a> represents the variance explained by each eigenvector.</li>
 </ol>
 <pre class="r"><code>#eigenvalues
 d.c.e$values </code></pre>
-<pre><code>## [1] 1.6584842 1.3578604 0.6463154 0.3373400</code></pre>
+<pre><code>## [1] 2.1950853 0.7763665 0.7168973 0.3116509</code></pre>
 <pre class="r"><code>#plot the percent variance explained by each PC
 perc_var &lt;- d.c.e$values/sum(d.c.e$values)
 plot(1:length(perc_var), perc_var, xlab=&quot;index&quot;, ylab=&quot;% variance&quot;)</code></pre>
@@ -187,28 +189,28 @@ new.vars = dctr.std %*% d.c.e$vectors
 <pre class="r"><code>#all the new variables are uncorrelated (0 covariance!)
 round(cov(new.vars), 3) </code></pre>
 <pre><code>##       [,1]  [,2]  [,3]  [,4]
-## [1,] 1.658 0.000 0.000 0.000
-## [2,] 0.000 1.358 0.000 0.000
-## [3,] 0.000 0.000 0.646 0.000
-## [4,] 0.000 0.000 0.000 0.337</code></pre>
+## [1,] 2.195 0.000 0.000 0.000
+## [2,] 0.000 0.776 0.000 0.000
+## [3,] 0.000 0.000 0.717 0.000
+## [4,] 0.000 0.000 0.000 0.312</code></pre>
 <pre class="r"><code>var(new.vars[,1])</code></pre>
-<pre><code>## [1] 1.658484</code></pre>
+<pre><code>## [1] 2.195085</code></pre>
 <pre class="r"><code>d.c.e$values</code></pre>
-<pre><code>## [1] 1.6584842 1.3578604 0.6463154 0.3373400</code></pre>
+<pre><code>## [1] 2.1950853 0.7763665 0.7168973 0.3116509</code></pre>
 <pre class="r"><code>cov(prcomp(dctr.std)$x) #this is the same as the line above</code></pre>
 <pre><code>##               PC1           PC2           PC3           PC4
-## PC1  1.658484e+00  2.481377e-16  3.539559e-16 -1.153910e-16
-## PC2  2.481377e-16  1.357860e+00  2.172862e-16 -3.036777e-16
-## PC3  3.539559e-16  2.172862e-16  6.463154e-01 -3.746483e-17
-## PC4 -1.153910e-16 -3.036777e-16 -3.746483e-17  3.373400e-01</code></pre>
+## PC1  2.195085e+00 -1.537158e-16 -3.202010e-17  1.469455e-16
+## PC2 -1.537158e-16  7.763665e-01 -4.113418e-17 -1.107994e-16
+## PC3 -3.202010e-17 -4.113418e-17  7.168973e-01  6.069273e-17
+## PC4  1.469455e-16 -1.107994e-16  6.069273e-17  3.116509e-01</code></pre>
 <pre class="r"><code>diag(prcomp(dctr.std)$sdev^2) #this is the same as the line above</code></pre>
-<pre><code>##          [,1]    [,2]      [,3]    [,4]
-## [1,] 1.658484 0.00000 0.0000000 0.00000
-## [2,] 0.000000 1.35786 0.0000000 0.00000
-## [3,] 0.000000 0.00000 0.6463154 0.00000
-## [4,] 0.000000 0.00000 0.0000000 0.33734</code></pre>
+<pre><code>##          [,1]      [,2]      [,3]      [,4]
+## [1,] 2.195085 0.0000000 0.0000000 0.0000000
+## [2,] 0.000000 0.7763665 0.0000000 0.0000000
+## [3,] 0.000000 0.0000000 0.7168973 0.0000000
+## [4,] 0.000000 0.0000000 0.0000000 0.3116509</code></pre>
 <pre class="r"><code>colSums(new.vars) #equal 0, so these are still 0-centered!</code></pre>
-<pre><code>## [1]  6.661338e-16  2.775558e-16  3.885781e-16 -1.054712e-15</code></pre>
+<pre><code>## [1]  8.326673e-16  8.326673e-17 -8.326673e-17  5.273559e-16</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li>So we performed a linear transformation of our original scaled variables into this new coordinate space. Shouldn’t we be able to transform these variables back into the original scaled variables? Yes!</li>
 </ol>
@@ -237,44 +239,44 @@ all.equal(pca$rotation %*% t(pca$x) , t(dctr.std))</code></pre>
 <pre class="r"><code>#these are almost equal, the 1st column of pca$x is *-1 
 #of the 1st column of new.vars
 pca$x; new.vars</code></pre>
-<pre><code>##              PC1        PC2        PC3         PC4
-## Pt_a -0.81496064  0.5154098  0.6610642  0.47600833
-## Pt_b  0.04733438  2.3173043  0.2269441 -0.87747132
-## Pt_c -1.51495949 -0.6999172  0.6304575  0.26325395
-## Pt_d -0.94049376 -0.7257171 -0.3716153 -1.03056978
-## Pt_e  0.66730367  1.4115783 -0.2648126  0.87516311
-## Pt_f -1.19313454  0.3664000 -1.2277490  0.20473686
-## Pt_g -1.04282088 -0.9876388  0.6091982  0.21448997
-## Pt_h  1.91479641 -0.6895177  1.2239081 -0.21823821
-## Pt_i  1.83794437 -0.1004614 -0.3972763  0.08089827
-## Pt_j  1.03899048 -1.4074401 -1.0901189  0.01172882</code></pre>
-<pre><code>##             [,1]       [,2]       [,3]        [,4]
-## Pt_a  0.81496064  0.5154098 -0.6610642 -0.47600833
-## Pt_b -0.04733438  2.3173043 -0.2269441  0.87747132
-## Pt_c  1.51495949 -0.6999172 -0.6304575 -0.26325395
-## Pt_d  0.94049376 -0.7257171  0.3716153  1.03056978
-## Pt_e -0.66730367  1.4115783  0.2648126 -0.87516311
-## Pt_f  1.19313454  0.3664000  1.2277490 -0.20473686
-## Pt_g  1.04282088 -0.9876388 -0.6091982 -0.21448997
-## Pt_h -1.91479641 -0.6895177 -1.2239081  0.21823821
-## Pt_i -1.83794437 -0.1004614  0.3972763 -0.08089827
-## Pt_j -1.03899048 -1.4074401  1.0901189 -0.01172882</code></pre>
+<pre><code>##             PC1        PC2          PC3        PC4
+## Pt_a  0.3793920  0.9707571 -0.554641491  0.3802610
+## Pt_b -0.6734865 -0.1584884 -1.226507385  0.5338457
+## Pt_c -1.0382667 -1.5161937 -0.451505582 -0.1118027
+## Pt_d  1.4826911 -0.6527299 -0.599451858 -0.1752650
+## Pt_e  0.8042060 -0.3289214  1.138450321 -0.6282404
+## Pt_f -1.3469590  1.0771696  1.094670865  0.2209006
+## Pt_g  2.2762099  0.7044909 -0.342303297 -0.6988157
+## Pt_h  0.5054637  0.6193816 -0.008357593  0.6146490
+## Pt_i  0.4069279 -1.0250189  1.187002631  0.6440084
+## Pt_j -2.7961784  0.3095530 -0.237356611 -0.7795408</code></pre>
+<pre><code>##            [,1]       [,2]         [,3]       [,4]
+## Pt_a -0.3793920  0.9707571  0.554641491  0.3802610
+## Pt_b  0.6734865 -0.1584884  1.226507385  0.5338457
+## Pt_c  1.0382667 -1.5161937  0.451505582 -0.1118027
+## Pt_d -1.4826911 -0.6527299  0.599451858 -0.1752650
+## Pt_e -0.8042060 -0.3289214 -1.138450321 -0.6282404
+## Pt_f  1.3469590  1.0771696 -1.094670865  0.2209006
+## Pt_g -2.2762099  0.7044909  0.342303297 -0.6988157
+## Pt_h -0.5054637  0.6193816  0.008357593  0.6146490
+## Pt_i -0.4069279 -1.0250189 -1.187002631  0.6440084
+## Pt_j  2.7961784  0.3095530  0.237356611 -0.7795408</code></pre>
 <pre class="r"><code>#svd on covariance matrix
 dctr.c.svd = svd(dctr.std.c) 
 all.equal(dctr.c.svd$d, d.c.e$values) #eigenvalues, same as d.c.e$values</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>#these are almost equal, one is the negative of the other
 dctr.c.svd$u; d.c.e$vectors</code></pre>
-<pre><code>##            [,1]       [,2]       [,3]       [,4]
-## [1,] -0.2881146  0.6711658 -0.5494687 -0.4057224
-## [2,]  0.5685421 -0.4291336 -0.3928252 -0.5816292
-## [3,]  0.6199300  0.3331537 -0.3671862  0.6081691
-## [4,] -0.4576424 -0.5043703 -0.6394895  0.3566892</code></pre>
-<pre><code>##            [,1]       [,2]      [,3]       [,4]
-## [1,]  0.2881146  0.6711658 0.5494687 -0.4057224
-## [2,] -0.5685421 -0.4291336 0.3928252 -0.5816292
-## [3,] -0.6199300  0.3331537 0.3671862  0.6081691
-## [4,]  0.4576424 -0.5043703 0.6394895  0.3566892</code></pre>
+<pre><code>##            [,1]        [,2]        [,3]       [,4]
+## [1,] -0.5706039  0.36645264 -0.17715598  0.7132597
+## [2,] -0.5580953  0.21233671 -0.44642197 -0.6664460
+## [3,] -0.4030960 -0.90228738 -0.09911756  0.1164768
+## [4,] -0.4477214  0.08064158  0.87149233 -0.1831491</code></pre>
+<pre><code>##           [,1]        [,2]        [,3]       [,4]
+## [1,] 0.5706039  0.36645264 -0.17715598  0.7132597
+## [2,] 0.5580953  0.21233671 -0.44642197 -0.6664460
+## [3,] 0.4030960 -0.90228738 -0.09911756  0.1164768
+## [4,] 0.4477214  0.08064158  0.87149233 -0.1831491</code></pre>
 <ul>
 <li>Scatterplot of new variables</li>
 </ul>
@@ -295,36 +297,36 @@ lam &lt;- lam * sqrt(n)
 lam &lt;- lam^scale
 scores[,choices]/lam</code></pre>
 <pre><code>##              PC1         PC2
-## Pt_a -0.20011561  0.12656015
-## Pt_b  0.01284544  0.62886223
-## Pt_c -0.37200207 -0.17186641
-## Pt_d -0.25522803 -0.19694266
-## Pt_e  0.16385807  0.34661656
-## Pt_f -0.32378883  0.09943239
-## Pt_g -0.25606726 -0.24251716
-## Pt_h  0.51963099 -0.18711899
-## Pt_i  0.45131181 -0.02466855
-## Pt_j  0.28195773 -0.38194636</code></pre>
+## Pt_a  0.08097715  0.20719767
+## Pt_b -0.24171048 -0.05688059
+## Pt_c -0.22160688 -0.32361524
+## Pt_d  0.53212942 -0.23426107
+## Pt_e  0.17164914 -0.07020473
+## Pt_f -0.48341596  0.38659006
+## Pt_g  0.48583254  0.15036602
+## Pt_h  0.18140807  0.22229255
+## Pt_i  0.08685439 -0.21877926
+## Pt_j -1.00353257  0.11109682</code></pre>
 <pre class="r"><code>t(t(scores[, choices])/lam) </code></pre>
 <pre><code>##              PC1         PC2
-## Pt_a -0.20011561  0.13987017
-## Pt_b  0.01162307  0.62886223
-## Pt_c -0.37200207 -0.18994118
-## Pt_d -0.23094058 -0.19694266
-## Pt_e  0.16385807  0.38306936
-## Pt_f -0.29297715  0.09943239
-## Pt_g -0.25606726 -0.26802208
-## Pt_h  0.47018301 -0.18711899
-## Pt_i  0.45131181 -0.02726288
-## Pt_j  0.25512669 -0.38194636</code></pre>
+## Pt_a  0.08097715  0.34839922
+## Pt_b -0.14374846 -0.05688059
+## Pt_c -0.22160688 -0.54415331
+## Pt_d  0.31646448 -0.23426107
+## Pt_e  0.17164914 -0.11804802
+## Pt_f -0.28749393  0.38659006
+## Pt_g  0.48583254  0.25283779
+## Pt_h  0.10788580  0.22229255
+## Pt_i  0.08685439 -0.36787345
+## Pt_j -0.59681423  0.11109682</code></pre>
 <pre class="r"><code># samples in PC space
 #divided by lambda
 t(t(x$rotation[, choices]) * lam) </code></pre>
-<pre><code>##             PC1       PC2
-## Var_1 -1.173332  2.473189
-## Var_2  2.315359 -1.581321
-## Var_3  2.524633  1.227643
-## Var_4 -1.863725 -1.858562</code></pre>
+<pre><code>##             PC1        PC2
+## Var_1 -2.673379  1.0210600
+## Var_2 -2.614773  0.5916413
+## Var_3 -1.888575 -2.5140753
+## Var_4 -2.097653  0.2246945</code></pre>
 <pre class="r"><code>#original variable directions in PC space
 #multiplied by lambda</code></pre>
 <ul>
@@ -344,7 +346,7 @@ t(t(x$rotation[, choices]) * lam) </code></pre>
 </div>
 <div id="blog-tutorials" class="section level3">
 <h3>Blog tutorials</h3>
-<p><a href="http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca" class="uri">http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca</a> <a href="https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca" class="uri">https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca</a></p>
+<p><a href="http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca" class="uri">http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca</a> <a href="https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca" class="uri">https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca</a> <a href="https://plot.ly/ipython-notebooks/principal-component-analysis/" class="uri">https://plot.ly/ipython-notebooks/principal-component-analysis/</a></p>
 </div>
 <div id="papers" class="section level3">
 <h3>Papers</h3>

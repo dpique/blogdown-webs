@@ -1,0 +1,110 @@
+---
+title: pdf, cdf, and inverse cdf
+author: Daniel Pique
+date: '2018-05-19'
+runtime: shiny
+slug: pdf-cdf-and-inverse-cdf
+categories:
+  - Math
+tags:
+  - probability
+  - pdf
+  - cdf
+  - Gaussian
+  - Logit
+  - Probit
+---
+
+
+
+<p>In this post, we will cover the relationship between the probability density function (PDF), the cumulative probability density function (CDF), and the inverse CDF. The inverse CDF is also know as the Quantile function (we’ll see why later).</p>
+<p>This post stemmed from my interest in transforming a set of values on a [0,1] scale to values corresponsing to those on a Normal distribution. This led to me learning about something called the inverse transform method. Basically, what this says is that we first start off with a uniform sample of values between 0 and 1.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.4
+## ✔ tidyr   0.8.0     ✔ stringr 1.3.0
+## ✔ readr   1.1.1     ✔ forcats 0.2.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>#library(ggthemr)
+#install.packages(&quot;ggthemr&quot;)
+#ggthemr(&quot;dust&quot;)
+
+u &lt;- runif(n = 100, min = 0, max = 1)
+hist(u)</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>theme_bw2 &lt;- function (base_size = 11, base_family = &quot;&quot;) {
+    theme_grey(base_size = base_size, base_family = base_family) %+replace% 
+        theme(#text = element_text(color=&quot;black&quot;), 
+              panel.background = element_rect(fill = &quot;white&quot;, 
+            colour = NA), panel.border = element_rect(fill = NA, 
+            colour = &quot;black&quot;), panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank(),
+                strip.background = element_rect(fill = &quot;grey85&quot;, 
+                colour = &quot;black&quot;), legend.key = element_rect(fill = &quot;white&quot;, 
+                colour = NA), complete = TRUE)
+}
+
+theme_set(theme_bw2(base_size = 24, base_family = &quot;Helvetica&quot;)) #preferred by science ##theme_hc())</code></pre>
+<p>Then, for each of these 100 numbers <span class="math inline">\(u_1, u_2, ..., u_{100}\)</span> , we return the largest number from the distribution <span class="math inline">\(N(X, \mu, \sigma))\)</span> such that <span class="math inline">\(N(-\infty &lt; X&lt; x) \leq u_i\)</span>. In R, we accomplish this with the function <code>pnorm</code></p>
+<pre class="r"><code>mu &lt;- 0
+sigma &lt;- 1
+#Transformation from
+#pnorm gives the CDF
+#probability density function
+#qnorm gives the quantile function
+#dnorm gives
+#qnorm(p = )
+qnorm(p = u, mean = mu, sd = sigma) #what is a quantile</code></pre>
+<pre><code>##   [1]  1.266688935 -0.651166781 -0.676746067  0.450961795 -0.228397168
+##   [6] -0.990790951  0.058602363  1.551491611 -4.045392396 -0.708719362
+##  [11] -1.306134011  4.029962480 -1.858017620 -1.027250727 -0.829987400
+##  [16] -1.083558864 -1.224682930 -0.374272394 -1.686605225  1.492821523
+##  [21]  1.943646003  0.605215455  0.616386466 -0.512330413 -0.225059659
+##  [26]  1.309977185 -0.741594057 -0.632257870  0.855012050  0.238635625
+##  [31]  0.781560363 -0.696484186 -0.240312374 -1.616943021  0.852812479
+##  [36]  0.510389003 -0.699330518 -0.184916299  1.597547762  0.614684273
+##  [41] -0.002468647 -0.577658825  2.156934733 -0.919294763  0.053622244
+##  [46] -0.992668208  0.245301577  0.710322994 -0.045049807  0.047411297
+##  [51] -0.511056176 -0.155847085 -0.760607964 -0.121556220 -0.175038927
+##  [56] -1.655072427 -0.231847079  0.127684692  0.273759607 -1.352560571
+##  [61]  2.350378718 -0.842479948  1.644409990 -0.084582203  0.155064944
+##  [66] -0.905104781  1.266774898 -0.482325465  1.215708916  0.655683791
+##  [71]  0.241807928 -0.529877101 -1.527600157 -1.073537695  0.686685075
+##  [76]  0.637836626  0.039107320 -0.452879404 -0.943128035  0.218403872
+##  [81] -0.875406844  0.408733309  0.755304700  0.658266743 -1.219329457
+##  [86] -1.464996020  1.055165962  0.808357337  0.910707879 -1.721694694
+##  [91] -0.010425279 -1.278187293  1.253177038 -0.060362466  0.418679608
+##  [96] -2.345818827  0.705792337  1.308795735  0.717789856  0.866446520</code></pre>
+<pre class="r"><code>dnorm(0)</code></pre>
+<pre><code>## [1] 0.3989423</code></pre>
+<p>The idea is to take the numbers between 0 and 1 and then pass them to the inverse CDF of the desired distribution (in this case the Normal distribution). The inverse CDF of the Normal (aka probit) does not have a closed-form solution, so it is generated using numerical methods.</p>
+<p>The inverse of <code>pnorm</code>, the CDF, is <code>qnorm</code>. Rather than take in a quantile and return a probability, qnorm takes in a proability and returns a quantile. A quantile is a value that represents a set number of sd away from 0. The quantile function <code>qnorm</code> is also known as the percent-point function or inverse CDF. It takes in the value of</p>
+<p>percent quantile function specifies, for a given probability in the probability distribution of a random variable, the value at which the probability of the random variable <span class="math inline">\(N(\mu, \sigma)\)</span> is less than or equal to the given probability. It is also called the</p>
+<p>In the case of the normal distribution, the quantile function <code>qnorm</code> is known as the <em>probit</em>.</p>
+<pre class="r"><code>seq_of_probs &lt;- seq(0, 1, by = 0.01)
+mu &lt;- 5; sigma &lt;- 3
+probit &lt;- qnorm(p = seq_of_probs, mean = mu, sd = sigma)
+plot(seq_of_probs, probit)</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The <em>probit</em> takes in <em>prob</em>abil<em>it</em>ies and returns the value of the standard normal distribution <span class="math inline">\(N(\mu=0, \sigma=1)\)</span> at which the probability of generating a value less than or equal to that value is the given probability. The probit function is the quantile function associated with the standard normal distribution.</p>
+<p>Note that the probit (ie the inverse CDF) depends on the value of mu and sigma, the same values that the normal distribution depends on. We can explore this below:</p>
+<div id="section-we-can-also-see-where-each-of-our-generated-points-land" class="section level1">
+<h1>we can also see where each of our generated points land</h1>
+<pre class="r"><code>u.samp &lt;- sample(u,10)
+prob_df &lt;- data.frame(seq_of_probs, probit)
+
+plot(seq_of_probs, probit)
+abline(v = u.samp)
+abline(h = qnorm(u.samp, mean = mu, sd = sigma))</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>marks &lt;- data.frame(sampl = u.samp,
+                    quant = qnorm(u.samp, mean = mu, sd = sigma))
+ggplot() + geom_point(data=prob_df, aes(x=seq_of_probs, y= probit)) + 
+   geom_segment(data=marks, aes(x = sampl, y=quant, xend=0, yend=quant)) +
+   geom_segment(data=marks, aes(x = sampl, y=quant, xend=sampl, yend=-Inf)) #+</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<p>We can transform the uniform numbers to a Gaussian with any parameters mu and sigma because the Gaussian is scale invariant.</p>
+</div>

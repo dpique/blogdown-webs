@@ -1,0 +1,23 @@
+---
+title: Instrumental and latent variables
+author: Daniel Pique
+date: '2018-05-29'
+slug: instrumental-and-latent-variables
+categories:
+  - Math
+  - Statistics
+  - Hierarchical models
+tags: []
+---
+
+Resources for understanding instrumental variables: 
+
+http://www.rebeccabarter.com/blog/2018-05-23-instrumental_variables/
+
+Great youtube series (3 videos):
+https://www.youtube.com/watch?v=bSLEGjbuit8
+https://www.youtube.com/watch?v=6tyO4ISzVhw
+https://www.youtube.com/watch?v=OwM3BgWEgUg
+
+Confounding and causal inference:
+http://www.rebeccabarter.com/blog/2017-07-05-confounding/

@@ -32,3 +32,13 @@ https://www.edx.org/xseries/genomics-data-analysis
 12. [Cheatsheets offered by RStudio](https://www.rstudio.com/resources/cheatsheets/)
 
 13. Genomics databases available online - there's a wealth of knowledge out there. Wikipedia [has a good list](https://en.wikipedia.org/wiki/List_of_biological_databases), and [so does CSHL](https://cshl.libguides.com/c.php?g=523983&p=3582517).
+
+14. [Pudding.cool](https://pudding.cool/) has well-illustrated and interesting data essays 
+
+15. The [Simply statistics](https://simplystatistics.org/) blog has updates from leading academic data scientists
+
+-----------------------
+
+Resources specific to Einstein
+
+1. [Dissertation database](http://libcat.einstein.yu.edu/search/a?searchtype=Y&searcharg=dissertations+and+theses&SORT=D&searchscope=1&submit=Search) - click on the first link. For an example of a well-organized thesis, search for Shira Rockwitz, student of Deyou Zheng, at Einstein.

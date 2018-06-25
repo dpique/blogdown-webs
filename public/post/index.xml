@@ -6,10 +6,51 @@
     <description>Recent content in Posts on Daniel Pique&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Instrumental and latent variables</title>
+      <link>/2018/05/29/instrumental-and-latent-variables/</link>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/29/instrumental-and-latent-variables/</guid>
+      <description>Resources for understanding instrumental variables:
+http://www.rebeccabarter.com/blog/2018-05-23-instrumental_variables/
+Great youtube series (3 videos): https://www.youtube.com/watch?v=bSLEGjbuit8 https://www.youtube.com/watch?v=6tyO4ISzVhw https://www.youtube.com/watch?v=OwM3BgWEgUg
+Confounding and causal inference: http://www.rebeccabarter.com/blog/2017-07-05-confounding/</description>
+    </item>
+    
+    <item>
+      <title>pdf, cdf, and inverse cdf</title>
+      <link>/2018/05/19/pdf-cdf-and-inverse-cdf/</link>
+      <pubDate>Sat, 19 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/19/pdf-cdf-and-inverse-cdf/</guid>
+      <description>In this post, we will cover the relationship between the probability density function (PDF), the cumulative probability density function (CDF), and the inverse CDF. The inverse CDF is also know as the Quantile function (we’ll see why later).
+This post stemmed from my interest in transforming a set of values on a [0,1] scale to values corresponsing to those on a Normal distribution. This led to me learning about something called the inverse transform method.</description>
+    </item>
+    
+    <item>
+      <title>Deriving Least Squares Solution for Linear Regression</title>
+      <link>/2018/04/21/deriving-least-squares-solution-for-linear-regression/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/21/deriving-least-squares-solution-for-linear-regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solving Systems of Equations in R</title>
+      <link>/2018/04/21/solving-systems-of-equations-in-r/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/21/solving-systems-of-equations-in-r/</guid>
+      <description>library(tidyverse) ## ── Attaching packages ─────────────────────────────────────────── tidyverse 1.2.1 ── ## ✔ ggplot2 2.2.1 ✔ purrr 0.2.4 ## ✔ tibble 1.4.2 ✔ dplyr 0.7.4 ## ✔ tidyr 0.8.0 ✔ stringr 1.3.0 ## ✔ readr 1.1.1 ✔ forcats 0.2.0 ## ── Conflicts ────────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() The code shown here is derived from this video: https://www.youtube.com/watch?v=jF71LzipydA
+Imagine that we have a system of equations with 3 variables and 3 unknowns.</description>
+    </item>
     
     <item>
       <title>Computational resources and best practices for your PhD</title>
