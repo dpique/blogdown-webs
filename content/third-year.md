@@ -20,9 +20,9 @@ Rotation resources
 Rotation schedule and grades
 ---------
 
-1. [one45](https://einstein.one45.com/one.php) lists your rotation schedule and evaluations
+1. [one45](https://einstein.one45.com/one.php) - site where you rank clinical sites (6 weeks before start of rotation) and view your rotation schedule and evaluations
 
-1. [Canvas](https://aecm.instructure.com/courses/171) lists clerkship grades
+1. [Canvas](https://aecm.instructure.com/courses/171) 
 
 
 NBME resources
@@ -39,9 +39,13 @@ NBME resources
 Other resources (by clerkship)
 ----------
 
+#### All
+
+1. [UWorld](https://www.uworld.com/)
+
+1. [OnlineMedEd](https://onlinemeded.org/)
+
 #### Pediatrics
 1. U. Chicago readings (https://pedclerk.bsd.uchicago.edu/)
 
 1. BRS pedatrics can be used as a reference (like First Aid was for Step 1)
-
-1. 
