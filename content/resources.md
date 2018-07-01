@@ -37,8 +37,13 @@ https://www.edx.org/xseries/genomics-data-analysis
 
 15. The [Simply statistics](https://simplystatistics.org/) blog has updates from leading academic data scientists
 
+16. [Cookie cutter data science](https://drivendata.github.io/cookiecutter-data-science/#other-people-will-thank-you) - provides template for data science project file structure
+
+  - there are [other](https://nicercode.github.io/blog/2013-04-05-projects/) [opinions](http://projecttemplate.net/index.html)/[examples](http://www.carlboettiger.info/2012/05/06/research-workflow.html) on how to do this. Might be best to pick one and then organize this the same way for all your projects. Even better if you use a script/R package that can create this project structure automatically.
+  
+  
 -----------------------
 
 Resources specific to Einstein
 
-1. [Dissertation database](http://libcat.einstein.yu.edu/search/a?searchtype=Y&searcharg=dissertations+and+theses&SORT=D&searchscope=1&submit=Search) - click on the first link. For an example of a well-organized thesis, search for Shira Rockwitz, student of Deyou Zheng, at Einstein.
+1. [Dissertation database](http://libcat.einstein.yu.edu/search/a?searchtype=Y&searcharg=dissertations+and+theses&SORT=D&searchscope=1&submit=Search) - click on the first link. For an example of a well-organized thesis, search for Shira Rockowitz, student of Deyou Zheng, at Einstein.

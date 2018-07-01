@@ -36,6 +36,9 @@ NBME resources
 
 1. [Self assessement shelf exam from NBME](http://www.nbme.org/Students/sas/masteryseries.html) - $20 as of June 2018
 
+1. [Guide to exam lengths](http://www.nbme.org/pdf/SubjectExams/SubjectExaminationQuickGuide.pdf)
+    Most are 110 questions and 2 hr, 45 min long (no breaks)
+
 Other resources (by clerkship)
 ----------
 
@@ -46,6 +49,20 @@ Other resources (by clerkship)
 1. [OnlineMedEd](https://onlinemeded.org/)
 
 #### Pediatrics
-1. U. Chicago readings (https://pedclerk.bsd.uchicago.edu/)
+1. [U. Chicago readings](https://pedclerk.bsd.uchicago.edu/)
 
 1. BRS pedatrics can be used as a reference (like First Aid was for Step 1)
+
+1. [Content outline from NBME](http://www.nbme.org/Schools/Subject-Exams/Subjects/clinicalsci_ped.html)
+
+###### Peds references (with links to Einstein online references)
+
+1. [Nelson textbook of pediatrics (2016)](http://libcat.einstein.yu.edu/search~S1?/YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ/YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ&extended=0&SUBKEY=Nelson+Textbook+of+Pediatrics/1%2C9%2C9%2CB/frameset&FF=YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ&1%2C1%2C) - the foremost authority on peds. Some UW questions have material similar to what is found here.
+
+1. [Harriet Lane handbook (2018)](http://libcat.einstein.yu.edu/search~S1?/YThe+Harriet+Lane+Handbook&searchscope=1&SORT=DZ/YThe+Harriet+Lane+Handbook&searchscope=1&SORT=DZ&extended=0&SUBKEY=The+Harriet+Lane+Handbook/1%2C8%2C8%2CB/frameset&FF=YThe+Harriet+Lane+Handbook&searchscope=1&SORT=DZ&1%2C1%2C) - resource for residents in pediatrics; also available through the Unbound medicine app (free from Einstein library).
+
+1. [Atlas of Pediatric Physical diagnosis (2017)](http://libcat.einstein.yu.edu/search~S1?/YAtlas+of+Pediatric+Physical+Diagnosis&searchscope=1&SORT=DZ/YAtlas+of+Pediatric+Physical+Diagnosis&searchscope=1&SORT=DZ&extended=0&SUBKEY=Atlas+of+Pediatric+Physical+Diagnosis/1%2C5%2C5%2CB/frameset&FF=YAtlas+of+Pediatric+Physical+Diagnosis&searchscope=1&SORT=DZ&1%2C1%2C) - contains videos and images of clinical diagnoses.
+
+1. [Netter's pediatrics (2011)](http://libcat.einstein.yu.edu/search~S1?/Ynetter+pediatrics&searchscope=1&SORT=D/Ynetter+pediatrics&searchscope=1&SORT=D&SUBKEY=netter+pediatrics/1%2C2%2C2%2CB/frameset&FF=Ynetter+pediatrics&searchscope=1&SORT=D&1%2C1%2C) - illustrated peds with illustrations of cell and tissue physiology, physical findings, and patient scenarios
+
+1. [Netter's illustrated human pathology (2014)](http://libcat.einstein.yu.edu/search~S1/?searchtype=Y&searcharg=netter+illustrated+human+pathology&searchscope=1&sortdropdown=-&SORT=DZ&extended=0&SUBMIT=Search&searchlimits=&searchorigarg=Ynetter+pediatrics%26SORT%3DD) - illustrations by Netter of common disorders
