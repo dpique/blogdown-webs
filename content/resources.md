@@ -39,9 +39,15 @@ https://www.edx.org/xseries/genomics-data-analysis
 
 16. [Cookie cutter data science](https://drivendata.github.io/cookiecutter-data-science/#other-people-will-thank-you) - provides template for data science project file structure
 
-  - there are [other](https://nicercode.github.io/blog/2013-04-05-projects/) [opinions](http://projecttemplate.net/index.html)/[examples](http://www.carlboettiger.info/2012/05/06/research-workflow.html) on how to do this. Might be best to pick one and then organize this the same way for all your projects. Even better if you use a script/R package that can create this project structure automatically.
+  - there are [other](https://nicercode.github.io/blog/2013-04-05-projects/) [opinions](http://projecttemplate.net/index.html)/[examples](http://www.carlboettiger.info/2012/05/06/research-workflow.html) on how to do this. Might be best to pick one and then organize this the same way for all your projects. Even better if you use a R package that can create this project structure automatically, like [workflowR]().
   
+17. Policyvis for data visualization help: https://policyviz.com/helpmeviz/how-it-works/
   
+18. [Data-to-vis](https://www.data-to-viz.com/) is a guide for picking the best graph for your data.
+
+19. Very nice visualization of [cave rescue](https://multimedia.scmp.com/news/world/article/2154457/thai-cave-rescue/index.html)
+
+20. [Flowing data](http://flowingdata.com/) is a collection of data visualization and data journalism.
 -----------------------
 
 Resources specific to Einstein
