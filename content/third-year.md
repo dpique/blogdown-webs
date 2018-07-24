@@ -55,7 +55,7 @@ Other resources (by clerkship)
 
 1. [Content outline from NBME](http://www.nbme.org/Schools/Subject-Exams/Subjects/clinicalsci_ped.html)
 
-###### Peds references (with links to Einstein online references)
+#### Peds references (with links to Einstein online references)
 
 1. [Nelson textbook of pediatrics (2016)](http://libcat.einstein.yu.edu/search~S1?/YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ/YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ&extended=0&SUBKEY=Nelson+Textbook+of+Pediatrics/1%2C9%2C9%2CB/frameset&FF=YNelson+Textbook+of+Pediatrics&searchscope=1&SORT=DZ&1%2C1%2C) - the foremost authority on peds. Some UW questions have material similar to what is found here.
 
@@ -66,3 +66,7 @@ Other resources (by clerkship)
 1. [Netter's pediatrics (2011)](http://libcat.einstein.yu.edu/search~S1?/Ynetter+pediatrics&searchscope=1&SORT=D/Ynetter+pediatrics&searchscope=1&SORT=D&SUBKEY=netter+pediatrics/1%2C2%2C2%2CB/frameset&FF=Ynetter+pediatrics&searchscope=1&SORT=D&1%2C1%2C) - illustrated peds with illustrations of cell and tissue physiology, physical findings, and patient scenarios
 
 1. [Netter's illustrated human pathology (2014)](http://libcat.einstein.yu.edu/search~S1/?searchtype=Y&searcharg=netter+illustrated+human+pathology&searchscope=1&sortdropdown=-&SORT=DZ&extended=0&SUBMIT=Search&searchlimits=&searchorigarg=Ynetter+pediatrics%26SORT%3DD) - illustrations by Netter of common disorders
+
+#### Questions
+
+1. [BRS pediatrics](http://elibrary.einstein.yu.edu/login?URL=http://accesspediatrics.mhmedical.com/qa.aspx?resourceID=1733) - question bank

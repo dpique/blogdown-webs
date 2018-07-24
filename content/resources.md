@@ -48,6 +48,9 @@ https://www.edx.org/xseries/genomics-data-analysis
 19. Very nice visualization of [cave rescue](https://multimedia.scmp.com/news/world/article/2154457/thai-cave-rescue/index.html)
 
 20. [Flowing data](http://flowingdata.com/) is a collection of data visualization and data journalism.
+
+21. [#hiddencurriculum hashtag on Twitter](https://twitter.com/thehauer/status/1021179403680862218) - discusses insights into graduate school that people wish they knew when they started.
+
 -----------------------
 
 Resources specific to Einstein
