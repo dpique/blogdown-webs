@@ -24,6 +24,7 @@ Rotation schedule and grades
 
 1. [Canvas](https://aecm.instructure.com/courses/171) 
 
+1. [myYU](https://selfserveprod.yu.edu/pls/banprd/twbkwbis.P_GenMenu?name=homepage) - Check individual evaluations on here
 
 NBME resources
 ----------
@@ -66,6 +67,10 @@ Other resources (by clerkship)
 1. [Netter's pediatrics (2011)](http://libcat.einstein.yu.edu/search~S1?/Ynetter+pediatrics&searchscope=1&SORT=D/Ynetter+pediatrics&searchscope=1&SORT=D&SUBKEY=netter+pediatrics/1%2C2%2C2%2CB/frameset&FF=Ynetter+pediatrics&searchscope=1&SORT=D&1%2C1%2C) - illustrated peds with illustrations of cell and tissue physiology, physical findings, and patient scenarios
 
 1. [Netter's illustrated human pathology (2014)](http://libcat.einstein.yu.edu/search~S1/?searchtype=Y&searcharg=netter+illustrated+human+pathology&searchscope=1&sortdropdown=-&SORT=DZ&extended=0&SUBMIT=Search&searchlimits=&searchorigarg=Ynetter+pediatrics%26SORT%3DD) - illustrations by Netter of common disorders
+
+#### Family medicine
+
+1. [EKG practice](https://ecg.bidmc.harvard.edu/maven/welcome.asp?ref=displist.asp?ans=0)
 
 #### Questions
 

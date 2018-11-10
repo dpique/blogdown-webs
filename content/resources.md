@@ -73,6 +73,7 @@ Below are some free resources that I have found useful related to data science a
 
 1. [Cheatsheets offered by RStudio](https://www.rstudio.com/resources/cheatsheets/)
 
+Many people think that they've accomplished something by getting into graduate school, and then they forget that they have to work just as hard to succeed in graduate school -- maybe even harder, because they have to learn about the resources, which are often part of a #hiddenagenda, and the rules are not as well-written as in undergrad (there's no syllabus for the lab, no office hours. q). I thought I was done once I started graduate school.
 
 -----------------------
 
