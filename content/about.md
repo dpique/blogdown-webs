@@ -5,6 +5,6 @@ date: "2016-05-05T21:48:51-07:00"
 
 Hello! Thank you for visiting my site.
 
-I develop tools to gain insights into cancer from genomic data. I am currently an MD/PhD student at the Albert Einstein College of Medicine (Bronx, NY) in the Department of Systems and Computational Biology. I am interested in the application of machine learning methods to high-throughput sequencing data to identify novel therapeutic targets in cancer.
+My name is Daniel, and I apply and develop tools to gain insights into chronic diseases using both clinical and genetic data. I am currently an MD/PhD student at the Albert Einstein College of Medicine (Bronx, NY). I completed my PhD in 2018 in the Department of Systems and Computational Biology and am currently a 3rd year medical student. My career goal is to help understand, treat and prevent chronic diseases, particularly as they relate to medically underserved communities.
 
-I also enjoy traveling, playing squash, and attending hackathons.
+I also enjoy playing squash and attending hackathons.
