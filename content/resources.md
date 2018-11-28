@@ -2,9 +2,8 @@
 title: "Resources"
 ---
 
-How do I learn computational biology?
-Below are some free resources that I have found useful related to data science and computational biology. These mostly pertain to the R environment
-
+How do I learn about data science and computational biology?
+Below are some free resources that I have found useful related to data science, data visualization, and computational biology. These mostly pertain to the R environment.
 
 
 ### Newsletters and Blogs
@@ -21,7 +20,6 @@ Below are some free resources that I have found useful related to data science a
 1. [Cookie cutter data science](https://drivendata.github.io/cookiecutter-data-science/#other-people-will-thank-you) - provides template for data science project file structure
 
   - there are [other](https://nicercode.github.io/blog/2013-04-05-projects/) [opinions](http://projecttemplate.net/index.html)/[examples](http://www.carlboettiger.info/2012/05/06/research-workflow.html) on how to do this. Might be best to pick one and then organize this the same way for all your projects. Even better if you use a R package that can create this project structure automatically, like [workflowR](https://jdblischak.github.io/workflowr/).
-
 
 1. [Peerj - practical data science](https://peerj.com/collections/50-practicaldatascistats/). This is a collection of articles that discuss best practices for data collection and analysis.
 
@@ -64,6 +62,10 @@ Below are some free resources that I have found useful related to data science a
 1. [Flowing data](http://flowingdata.com/) is a collection of data visualization and data journalism.
 
 1. [Pudding.cool](https://pudding.cool/) has well-illustrated and interesting data essays 
+
+1. [Visual cinnamon](https://www.visualcinnamon.com/) has excellent examples of data visualization
+
+1. Look at the winners from data visualization contests like [malofiej](http://www.malofiejgraphics.com/) and the [information is beautiful](https://www.informationisbeautifulawards.com/showcase?award=2016&pcategory=winner&type=awards) awards
 
 ### Other
 

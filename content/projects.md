@@ -5,13 +5,15 @@ date: '2016-05-05T21:48:51-07:00'
 
 Below is a list of projects that I have worked on:
 
-1. Aneuvis - Web application for analyzing chromosomal variation in single cells
+1. [Aneuvis](https://dpique.shinyapps.io/aneuvis/) - Web application for analyzing chromosomal variation in single cells. Built using Shiny.
 
-2. Oncomix
+2. [Oncomix](https://www.bioconductor.org/packages/release/bioc/html/oncomix.html) - An R package for identifying oncogene candidates based on gene expression patterns in tumor and adjacent normal tissue.
 
-3. abbreviatoR - A web application for automatically generating a list of abbreviations.
+3. [ReceptLoss](https://github.com/dpique/receptLoss) - An R package for identifying tumor suppressor candidates based on gene expression patterns in tumor and adjacent normal tissue.
 
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/dpique/abbreviatoR" data-icon="octicon-star" aria-label="Star dpique/abbreviatoR on GitHub">Star</a>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+4. [abbreviatoR](https://dpique.shinyapps.io/abbreviatoR/) - A Shiny web application for automatically generating an alphabetized list of abbreviations from a text corpus. Just copy-paste from Word or Excel!
+
+
+
+5. knudson - R data package containing data tables from Alfred Knudson's classic papers
+
