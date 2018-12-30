@@ -10,7 +10,8 @@ categories:
 tags: []
 ---
 
-Resources for understanding instrumental variables: 
+
+Below are some resources for understanding instrumental variables: 
 
 http://www.rebeccabarter.com/blog/2018-05-23-instrumental_variables/
 

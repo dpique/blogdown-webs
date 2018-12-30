@@ -14,27 +14,25 @@ tags:
 library(tidyverse)
 ```
 
-The code shown here is derived from this video:
-https://www.youtube.com/watch?v=jF71LzipydA
-
-
+The code shown here is derived from [this video](https://www.youtube.com/watch?v=jF71LzipydA):
 
 Imagine that we have a system of equations with 3 variables and 3 unknowns. It looks as follows:
 ![System of eq.](/img/syst-eq.png)
 
+Below is some code for how to solve this system of equations in R:
+
 ```{r}
-A = array(c(3,2,-1,2,-2,0.5,-1,4,-1), dim = c(3,3))
-b = c(1,-2,0)
+A <- array(c(3,2,-1,2,-2,0.5,-1,4,-1), dim = c(3,3))
+b <- c(1,-2,0)
 A
-x = solve(a = A, b = b)
-Ax = A %*% x %>% 
+x <- solve(a = A, b = b)
+Ax <- A %*% x %>% 
   as.numeric %>% 
   round(10)
 
 all.equal(Ax, b) #are the two equal?
 
-invA = solve(A)
-#all.equal(invA %*% b %>% as.numeric, x)
+invA <- solve(A)
 invA %*% b %>% 
   as.numeric %>% 
   all.equal(x)

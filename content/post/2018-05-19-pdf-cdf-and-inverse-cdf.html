@@ -1,0 +1,73 @@
+---
+title: pdf, cdf, and inverse cdf
+author: Daniel Pique
+date: '2018-05-19'
+runtime: shiny
+slug: pdf-cdf-and-inverse-cdf
+categories:
+  - Math
+tags:
+  - probability
+  - pdf
+  - cdf
+  - Gaussian
+  - Logit
+  - Probit
+---
+
+
+
+<p>In this post, we will cover the relationship between the probability density function (PDF), the cumulative probability density function (CDF), and the inverse CDF. The inverse CDF is also know as the Quantile function (we’ll see why later).</p>
+<p>This post stemmed from my interest in transforming a set of values on a [0,1] scale to values corresponsing to those on a Normal distribution. This led to me learning about something called the inverse transform method. Basically, what this says is that we first start off with a uniform sample of values between 0 and 1.</p>
+<pre class="r"><code>u &lt;- runif(n = 100, min = 0, max = 1)
+hist(u)</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Then, for each of these 100 numbers <span class="math inline">\(u_1, u_2, ..., u_{100}\)</span> , we return the largest number from the distribution <span class="math inline">\(N(X, \mu, \sigma))\)</span> such that <span class="math inline">\(N(-\infty &lt; X&lt; x) \leq u_i\)</span>. In R, we accomplish this with the function <code>qnorm</code></p>
+<pre class="r"><code>mu &lt;- 0
+sigma &lt;- 1
+qnorm(p = u, mean = mu, sd = sigma)</code></pre>
+<pre><code>##   [1]  0.732754224  1.160000646  0.031870862  0.816153979  1.542966481
+##   [6]  0.074997736 -0.348584914  0.266597472 -1.411892946  0.415965907
+##  [11]  0.976947549  0.545553084  0.877710032 -1.808575923 -0.167726137
+##  [16]  0.125795337 -0.191600436 -1.443009775 -0.162986892 -0.507856712
+##  [21] -0.158416067 -0.192712508 -0.455218003 -0.215373847  0.621534978
+##  [26]  0.407515051 -0.117540826 -0.157311040 -0.946739948  1.303197263
+##  [31] -0.103633424  0.354098263  0.816308509  2.387875911 -0.737032516
+##  [36] -0.378786622  0.711716250 -0.736177256 -0.264911360  0.041173940
+##  [41]  1.120717223  0.061052945  1.586629980  0.282024606 -2.121415747
+##  [46] -0.957260846  1.576452705 -0.647209368 -0.067186812 -0.489554322
+##  [51]  0.393990674 -1.962792223  0.691090540  0.109636365 -1.268225821
+##  [56] -0.634826025  0.143182538  0.090189982  0.697321582  1.333475383
+##  [61] -1.453408488 -0.602566327  0.771199389 -0.548882734 -0.872882555
+##  [66]  1.866603827  0.317238514  0.292462761  0.349787453  1.529317366
+##  [71] -1.597843109  1.148673820 -0.063564184  0.694046290 -0.010029201
+##  [76] -0.245479720  0.503718166 -1.135190681 -1.608657807 -0.899770386
+##  [81]  1.193639962  0.222153711 -0.502492481 -1.246306467 -1.031687958
+##  [86] -0.038661585  0.009118645  1.581453354  0.264477771 -0.483916795
+##  [91] -1.013932319  0.406085033  1.522200100 -1.436932848  1.247972562
+##  [96]  1.433387422  0.033634456  0.281936556  0.512243818 -1.209740935</code></pre>
+<p>The idea is to take the numbers between 0 and 1 and then pass them to the inverse CDF (<code>qnorm</code>) of the desired distribution (in this case the Normal distribution). The CDF can be generated using <code>pnorm</code>, and its inverse can be generated using <code>qnorm</code>. While <code>pnorm</code> takes in a quantile and returns a probability, <code>qnorm</code> takes in a probability and returns a quantile.</p>
+<div id="section-quantiles" class="section level3">
+<h3>Quantiles</h3>
+<p>A quantile is a value that represents a set number of sd away from 0. Specifically, the quantile function <code>qnorm</code> specifies, for a given probability in the probability distribution of a random variable, the value at which the probability of the random variable <span class="math inline">\(N(\mu, \sigma)\)</span> is less than or equal to the given probability. The quantile function <code>qnorm</code> is also known as the percent-point function or inverse CDF. In the specific case of the standard normal distribution, the quantile function <code>qnorm</code> is known as the <em>probit</em>.</p>
+</div>
+<div id="section-two-notes-about-the-inverse-cdf" class="section level3">
+<h3>Two notes about the inverse CDF</h3>
+<ol style="list-style-type: decimal">
+<li><p>The inverse CDF <a href="https://scicomp.stackexchange.com/questions/24650/numerical-methods-for-calculating-the-inverse-cdf-when-closed-form-approximation">does not have a closed-form solution</a>, so it is generated using numerical methods.</p></li>
+<li><p>The inverse CDF depends on the same parameters as the CDF. In the case of the Gaussian, the inverse CDF depends on the value of mu and sigma.</p></li>
+</ol>
+<p>Note that we can transform the original uniform numbers to a Gaussian with any parameters mu and sigma because the Gaussian is scale invariant. We demonstrate this below, transforming the uniform values <code>u</code> to follow a Gaussian with mean 5 and sd 3:</p>
+<pre class="r"><code>mu &lt;- 5; sigma &lt;- 3
+probit &lt;- qnorm(p = u, mean = mu, sd = sigma)
+mean(probit)</code></pre>
+<pre><code>## [1] 5.11464</code></pre>
+<pre class="r"><code>sd(probit)</code></pre>
+<pre><code>## [1] 2.791123</code></pre>
+<pre class="r"><code>hist(probit)</code></pre>
+<p><img src="/post/2018-05-19-pdf-cdf-and-inverse-cdf_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="section-additional-readings" class="section level3">
+<h3>Additional readings</h3>
+<p>Below is a link to an <a href="https://www.countbayesie.com/blog/2015/4/4/parameter-estimation-the-pdf-cdf-and-quantile-function">excellent post</a> about the CDF and inverse CDF</p>
+</div>

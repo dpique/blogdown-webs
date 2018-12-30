@@ -55,6 +55,12 @@ Below are some free resources that I have found useful related to data science, 
 
 1. [Data-to-vis](https://www.data-to-viz.com/) is a guide for picking the best graph for your data.
   
+1. [Data viz course in D3](https://curran.github.io/dataviz-course-2018/) - combination of youtube lectures and worked examples in [Vizhub](https://vizhub.com/) (kind of like Github, but provides an online HTMl editor for D3 and SVG). Some worked examples come from this excellent free online javascript book, [Eloquent Javascript](https://eloquentjavascript.net/).  
+  
+1. [Fundamentals of data visualization](https://serialmentor.com/dataviz/) - free online book by Clause O. Wilke.
+
+1. [Data visualization: A Practical Introduction](https://socviz.co/index.html#preface) - free online book by Kieran Healy. 
+  
 ### Examples of data visualization
 
 1. Very nice visualization of [cave rescue](https://multimedia.scmp.com/news/world/article/2154457/thai-cave-rescue/index.html)
