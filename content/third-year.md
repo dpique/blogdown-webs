@@ -68,10 +68,32 @@ Other resources (by clerkship)
 
 1. [Netter's illustrated human pathology (2014)](http://libcat.einstein.yu.edu/search~S1/?searchtype=Y&searcharg=netter+illustrated+human+pathology&searchscope=1&sortdropdown=-&SORT=DZ&extended=0&SUBMIT=Search&searchlimits=&searchorigarg=Ynetter+pediatrics%26SORT%3DD) - illustrations by Netter of common disorders
 
+1. [BRS pediatrics](http://elibrary.einstein.yu.edu/login?URL=http://accesspediatrics.mhmedical.com/qa.aspx?resourceID=1733) - question bank
+
 #### Family medicine
 
 1. [EKG practice](https://ecg.bidmc.harvard.edu/maven/welcome.asp?ref=displist.asp?ans=0)
 
+
+#### OB/GYN
+
+1. [Step-up to obstetrics and gynecology](http://libcat.einstein.yu.edu/search~S1?/Yobstetrics&searchscope=1&SORT=D/Yobstetrics&searchscope=1&SORT=D&SUBKEY=obstetrics/1%2C327%2C327%2CB/frameset&FF=Yobstetrics&searchscope=1&SORT=D&11%2C11%2C) - available in print from Einstein library
+
+1. [Case files - Ob/gyn](http://libcat.einstein.yu.edu/search~S1?/Ycase+files+ob+gyn&searchscope=1&SORT=DZ/Ycase+files+ob+gyn&searchscope=1&SORT=DZ&extended=0&SUBKEY=case+files+ob+gyn/1%2C2233%2C2233%2CB/frameset&FF=Ycase+files+ob+gyn&searchscope=1&SORT=DZ&13%2C13%2C) - available in print from Einstein library
+
+1. [Pretest - Ob/gyn (2012)](http://libcat.einstein.yu.edu/search~S1?/Ypretest+ob+gyn&searchscope=1&SORT=DZ/Ypretest+ob+gyn&searchscope=1&SORT=DZ&extended=0&SUBKEY=pretest+ob+gyn/1%2C91%2C91%2CB/frameset&FF=Ypretest+ob+gyn&searchscope=1&SORT=DZ&13%2C13%2C) - available in print from Einstein library
+
+1. [The "Access" ObGyn series](https://obgyn-mhmedical-com.elibrary.einstein.yu.edu/) from McGraw Hill Medical (I don't think we have institutional access to this series unfortunately, but we do have access to the "Access" series for Medicine, Neurology, and Pediatrics).
+
+1. [First aid for Ob/Gyn clerkship](https://mhebooklibrary-com.elibrary.einstein.yu.edu/doi/pdf/10.1036/9780071664097) - direct link to download
+
+1. [Obstetrics and Gyn Correlations and Clinical scenarios for USMLE Step 3](https://mhebooklibrary-com.elibrary.einstein.yu.edu/doi/pdf/10.1036/9780071818940)
+
+1. [OB/Gyn secrets 2017](http://libcat.einstein.yu.edu/search/a?searchtype=Y&searcharg=secrets+ob+gyn&SORT=D&searchscope=1&submit=Search) - available online and in print
+
+1. [Netter's illustrated Ob/Gyn](https://www-clinicalkey-com.elibrary.einstein.yu.edu/#!/browse/book/3-s2.0-C20150058695) - available online, an illustrated guide to common conditions in ObGyn
+
+1. UWise question bank - see the link in the email that they sent us.
+
 #### Questions
 
-1. [BRS pediatrics](http://elibrary.einstein.yu.edu/login?URL=http://accesspediatrics.mhmedical.com/qa.aspx?resourceID=1733) - question bank
