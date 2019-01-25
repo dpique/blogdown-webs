@@ -97,5 +97,10 @@ Other resources (by clerkship)
 
 1. [Armando Hasunugan obstetrics video playlist](https://www.youtube.com/playlist?list=PLqTetbgey0aehPCbd7JaPnqwBaFP4ttvh) - also, his [site has a nice review](https://armandoh.org/disease/delivery-and-delivery-complications/) on different topics in obstetrics
 
+#### History-taking templates
+
+1. [Obgyn template](https://drive.google.com/uc?export=download&id=1AAZ_08i5CcJOemz9msm3Vm-36Wv2FzaT)
+
+
 #### Questions
 
