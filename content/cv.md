@@ -2,7 +2,7 @@
 title: Curriculum Vitae
 ---
 
-Email: daniel.pique@med.einstein.yu.edu
+Email: dpique1@gmail.com
 
 Education
 ---------
@@ -21,26 +21,23 @@ Education
 Publications
 ----------
 
-1. Pique, D., Greally, J. and Mar, J. (2017). oncomix: Identifying Genes Overexpressed in Subsets of Tumors from Tumor-Normal mRNA Expression Data. R package version 1.0.0.
 
-1. Sullenberger, C., Piqué, D.G., Ogata, Y. & Mensa-Wilmot, K. (2017) AEE788 inhibits basal body assembly and blocks DNA replication in the African trypanosome. Molecular Pharmacology. 91(5): 482-498.
+https://www.ncbi.nlm.nih.gov/myncbi/1276fTepQaJQa/bibliography/public/
 
-1. Prados-Rosales, R., Weinrick, B.C., Piqué, D.G., Jacobs, Jr. W.R., Casadevall, A., & Rodriguez, G.M. (2014) A role for Mycobacterium tuberculosis membrane vesicles in iron acquisition. Journal of Bacteriology. 196(6): 1250-1256.
+<iframe width="450" height="400" frameborder="no" src="https://www.ncbi.nlm.nih.gov/myncbi/1276fTepQaJQa/bibliography/public/"></iframe>
+<iframe width="450" height="400" scrolling="no" frameborder="no"  src="https://brettory.shinyapps.io/gender_tech_country/"> </iframe>
 
-1. Piqué, D.G. (2012) Regulation of the Trypanosoma brucei cell cycle with AEE788 and serum deprivation. An Undergraduate Research Thesis for the Honors Council of the University of Georgia, Athens, GA.
-
-1. Dyer, K.A., White, B.E., Bray, M.J., Piqué, D.G. & Betancourt, A.J. (2011) Molecular evolution of a Y chromosome to autosome gene duplication in Drosophila. Molecular Biology and Evolution. 28(3): 1293-1306.
 
 
 Technical Experience
 --------------------
 
 Programming Languages
-:   **R:** Statistical analyses with glmnet, data munging with base R, data visualization using ggplot, web design using blogdown/Hugo.
+:   **R:** Statistical analyses with glmnet, data munging with base R, data visualization using ggplot, web design using blogdown/Hugo. R package development, app development (RShiny)
 
 :   **Bash/Unix:** Submitting and running parallel jobs on HPC cluster, data munging
 
-:   Basic knowledge of **Python**, **Julia**, **javascript/HTML/CSS**
+:   Knowledge of **Python**, **javascript/HTML5/CSS**, **RShiny**
 
 
 Extracurriculars and Skills
