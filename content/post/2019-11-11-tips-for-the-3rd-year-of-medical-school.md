@@ -1,7 +1,13 @@
 ---
-title: 3rd year med school
+title: Tips for the 3rd year of medical school
+author: ~
+date: '2019-11-11'
+slug: tips-for-the-3rd-year-of-medical-school
+categories: []
+tags: []
 ---
 
+Here are some tips and resources for the 3rd year of medical school.
 
 Rotation resources
 ---------
@@ -102,5 +108,14 @@ Other resources (by clerkship)
 1. [Obgyn template](https://drive.google.com/uc?export=download&id=1AAZ_08i5CcJOemz9msm3Vm-36Wv2FzaT)
 
 
+#### Residency resources
+
+1. Look at the residency database available here (comparing work hours, etc): 
+https://freida.ama-assn.org/Freida/user/specStatisticsSearch.do?method=viewSpecialty&pageNumber=2
+
+2. 
+
 #### Questions
+
+
 

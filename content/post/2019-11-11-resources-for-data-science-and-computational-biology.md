@@ -1,5 +1,10 @@
 ---
-title: "Resources"
+title: Resources for data science and computational biology
+author: ~
+date: '2019-11-11'
+slug: resources-for-data-science-and-computational-biology
+categories: []
+tags: []
 ---
 
 How do I learn about data science and computational biology?

@@ -25,7 +25,6 @@ Publications
 https://www.ncbi.nlm.nih.gov/myncbi/1276fTepQaJQa/bibliography/public/
 
 <iframe width="450" height="400" frameborder="no" src="https://www.ncbi.nlm.nih.gov/myncbi/1276fTepQaJQa/bibliography/public/"></iframe>
-<iframe width="450" height="400" scrolling="no" frameborder="no"  src="https://brettory.shinyapps.io/gender_tech_country/"> </iframe>
 
 
 

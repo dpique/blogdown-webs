@@ -70,18 +70,9 @@ Website: <span style="vertical-align: -6px;"> <a href="https://dpique.shinyapps.
 
 <img alt = 'sp cord sens' width='400' src='/img/sensory_spinal_cord.png'/>
 
-## Other data analyses
-
-1. Psychiatric medications - timetables of approval.
-
-1. Diversity in medical education
-
 
 ## Other Contributions
 
 1. Automated emails and scheduler for Jacobi's [MSTP Continuity clinic](http://www.einstein.yu.edu/features/stories/615/helping-future-physician-scientists-develop-their-clinical-skills/) - Helped repair automated weekly email software (original code by Tommy Wilson, MD, PhD) - javascript, google apps script
 
 
-
-  [![](https://img.shields.io/badge/release%20version-1.0-green.svg)](https://www.bioconductor.org/packages/oncomix)
-[![](https://img.shields.io/badge/downloads-2383/total-blue.svg)](https://bioconductor.org/packages/stats/bioc/oncomix)
