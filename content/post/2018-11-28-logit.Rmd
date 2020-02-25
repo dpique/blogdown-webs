@@ -1,5 +1,5 @@
 ---
-title: logit
+title: What is the logit?
 author: Daniel Pique
 date: '2017-11-28'
 slug: logit
@@ -9,13 +9,13 @@ categories:
 tags: []
 ---
 
-$logit(p) <- log(p/(1-p))$ #this is appropriately called the log odds. The "odds" are a ratio between 2 events -- the probability of the event happening (p) and not happening (1-p). We see this as p/(1-p). The odds are wrapped in a *log*arithm -- hence the *log*-odds.
+The logit is defined as $logit(p) = log(p/(1-p))$ and is also called the log odds. The "odds" are a ratio between 2 events -- the probability of the event happening (p) and not happening (1-p). We see this as p/(1-p). The odds are wrapped in a *log*arithm -- hence the *log*-odds.
 
-It is used to transform probabilities on the open interval (0,1) to the Real number line.
+The logit is used to transform probabilities from the open interval $(0,1)$ to the real number line ($-\infty, \infty$). Note that probabilities that equal exactly 0 or 1 would lead to a logit that is undefined.
 
-The distribution of many of these mapped probability values is often assumed to have a Normal distribution. This can help in Bayesian sampling frameworks to make it more convenient to sample from the posterior distribution.
 
-Mnemonic -- the word 'logit' is small (compared to the word logistic), and so only relative constrained interval of probabilities can be passed through the logit function.
+The distribution of many of these mapped probability values is often assumed to have a Normal (Gaussian) distribution. This can help in Bayesian sampling frameworks to make it more convenient to sample from the posterior distribution.
 
-Note that the inverse logit takes you from logit values back to probabilities. You can use either formula. $e^v /1+e^v$.
+Note that the inverse logit takes you from logit values (infinite domain) back to probabilities. The inverse logit is also known as the logistic function: $logistic(v) = e^v /{1+e^v}$. 
 
+Mnemonic -- log**it** has infin**it**e domain; logis**ti**c has **ti**ny domain (0,1)

@@ -1,5 +1,5 @@
 ---
-title: Principal Component Analysis
+title: What is Principal Component Analysis (PCA)? A step-by-step guide in R.
 author: Daniel Pique
 date: '2017-11-24'
 slug: principal-component-analysis
@@ -11,7 +11,7 @@ tags:
  
 ### What is the purpose of PCA?
 
-In two words: dimensionality reduction. Basically, we use linear algebra to transform the original variables into a new set of variables called Principal Components (PCs). The number of original observations and variables stays the same, but the new variables are ordered by how much variance they explain in the data. This data matrix D is an N x P matrix, with each row corresponding to one of N samples/observations, and each of P variables as columns.
+In two words: dimensionality reduction. Basically, PCA uses linear algebra to transform the original variables into a new set of variables called Principal Components (PCs). The number of original observations and variables stays the same, but the new variables are ordered by how much variance they explain in the data. This data matrix D is an N x P matrix, with each row corresponding to one of N samples/observations, and each of P variables as columns.
 
 
 
@@ -168,7 +168,7 @@ dctr.c.svd$u; d.c.e$vectors
 plot(new.vars[1,], new.vars[2,], xlab=paste0("PC1: ", round(perc_var[1],2)*100, "% of variance"), ylab=paste0("PC2: ", round(perc_var[2],2)*100, "% of variance"))
 ```
 
-- BiPlots - projecting the original variable directions onto the new PC space. 
+- BiPlots - projecting the original variable directions onto the new PC space. See 
 
 https://youtu.be/JEYLfIVvR9I
 
@@ -192,23 +192,20 @@ t(t(x$rotation[, choices]) * lam)
 
 ```
 
-- Principle component permutation
-```{r}
-
-```
-
 
 ## Additional resources on PCA
 
 ### Videos
-- https://www.youtube.com/watch?v=ZqXnPcyIAL8
-- https://youtu.be/_UVHneBUBW0
-- https://www.youtube.com/watch?v=5zk93CpKYhg
+- [Conceptual introduction to PCA by StatQuest](https://youtu.be/_UVHneBUBW0)
+- [How to do PCA in R](https://www.youtube.com/watch?v=5zk93CpKYhg)
+- [Linear algebra behind PCA](https://www.youtube.com/watch?v=ZqXnPcyIAL8)
 
-### Blog tutorials
-http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca
-https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
-https://plot.ly/ipython-notebooks/principal-component-analysis/
+### Tutorials
+- [Conceptual introduction to PCA by Laura Hamilton](http://www.lauradhamilton.com/introduction-to-principal-component-analysis-pca)
+- [Why do we normalize the data before PCA](https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca)
+- [PCA in python](https://plot.ly/ipython-notebooks/principal-component-analysis/)
+- How to tell whether two groups are separate in PCA space with permutation of Euclidean distance between centroids - see supplementary data 2, section 2. ("Spatial clustering") from [Gertzung et al., 2017](nature.com/articles/ncomms6901#Sec17)
+
 
 ### Papers
 https://www.cs.cmu.edu/~elaw/papers/pca.pdf

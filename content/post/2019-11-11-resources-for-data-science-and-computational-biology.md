@@ -7,6 +7,8 @@ categories: []
 tags: []
 ---
 
+## Updated Feb 2020
+
 How do I learn about data science and computational biology?
 Below are some free resources that I have found useful related to data science, data visualization, and computational biology. These mostly pertain to the R environment.
 
@@ -85,6 +87,8 @@ Below are some free resources that I have found useful related to data science, 
 1. Contribute to an open-source project. Here's [a guide for how to get started](https://opensource.guide/how-to-contribute/).
 
 1. [Cheatsheets offered by RStudio](https://www.rstudio.com/resources/cheatsheets/)
+
+1. A cheatsheet for [statistical tests and their equivalent linear models in R](https://lindeloev.github.io/tests-as-linear/)
 
 -----------------------
 

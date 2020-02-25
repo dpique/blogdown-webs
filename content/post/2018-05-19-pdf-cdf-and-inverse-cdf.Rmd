@@ -1,5 +1,5 @@
 ---
-title: pdf, cdf, and inverse cdf
+title: Transforming values between different scales using R
 author: Daniel Pique
 date: '2018-05-19'
 runtime: shiny

@@ -13,5 +13,6 @@ I can help visualize your data. Please email me at dpique1@gmail.com with any qu
   - Non-traditional sources (eg PDF docs)
   - Special expertise in genomic data
 - Embedding into website or mobile application
-- In-person lectures on data visualization
+- In-person lectures and workshops on data visualization
 - Tools: R, RShiny, d3.js, Adobe Illustrator, Microsoft PowerPoint
+
