@@ -1,7 +1,7 @@
 ---
 title: What is Principal Component Analysis (PCA)? A step-by-step guide in R.
-author: Daniel Pique
-date: '2017-11-24'
+author: Daniel Piqué
+date: '2019-11-24'
 slug: principal-component-analysis
 categories: []
 tags:
@@ -175,18 +175,18 @@ https://youtu.be/JEYLfIVvR9I
 ```{r}
 x <- pca
 scores <- x$x
-choices=1L:2L
+choices = 1L:2L
 scale = 1
 n <- NROW(scores)
 
 lam <- x$sdev[choices]
 lam <- lam * sqrt(n)
-lam <- lam^scale
-scores[,choices]/lam
-t(t(scores[, choices])/lam) 
+lam <- lam ^ scale
+scores[, choices] / lam
+t(t(scores[, choices]) / lam)
 # samples in PC space
 #divided by lambda
-t(t(x$rotation[, choices]) * lam) 
+t(t(x$rotation[, choices]) * lam)
 #original variable directions in PC space
 #multiplied by lambda
 

@@ -38,7 +38,7 @@ The asthma data tables were available 1 each per county across the years 2005-20
 <img alt = 'allegh_dat' width='400' src='/img/allegh_dat.png'/>
 
 
-What I really wanted though was a single table with each county. [insert screenshot here]
+What I really wanted though was a single table with each county
 
 
 I used rvest to obtain the data and defined a function, `read_asthma_dat()`, to parse the HTML from the website.

@@ -1,6 +1,6 @@
 baseurl = "https://dpique.rbind.io"
 languageCode = "en-us"
-title = "Daniel Pique's website"
+title = "Daniel Piqué"
 theme = "hugo-lithium-theme"
 googleAnalytics = "UA-97059643-2"
 disqusShortname = "blogdown-webs"

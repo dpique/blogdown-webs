@@ -1,6 +1,6 @@
 ---
-title: Resources for data science and computational biology
-author: ~
+title: Free resources for data science and computational biology
+author: Daniel Piqué
 date: '2019-11-11'
 slug: resources-for-data-science-and-computational-biology
 categories: []
@@ -9,8 +9,7 @@ tags: []
 
 ## Updated Feb 2020
 
-How do I learn about data science and computational biology?
-Below are some free resources that I have found useful related to data science, data visualization, and computational biology. These mostly pertain to the R environment.
+Below are some resources that I have found useful related to data science, data visualization, and computational biology. These mostly pertain to the R environment.
 
 
 ### Newsletters and Blogs
@@ -90,8 +89,3 @@ Below are some free resources that I have found useful related to data science, 
 
 1. A cheatsheet for [statistical tests and their equivalent linear models in R](https://lindeloev.github.io/tests-as-linear/)
 
------------------------
-
-### Resources specific to Einstein
-
-1. [Dissertation database](http://libcat.einstein.yu.edu/search/a?searchtype=Y&searcharg=dissertations+and+theses&SORT=D&searchscope=1&submit=Search) - click on the first link. For an example of a well-organized thesis, search for Shira Rockowitz, student of Deyou Zheng, at Einstein.
