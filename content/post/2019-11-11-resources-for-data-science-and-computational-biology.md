@@ -29,6 +29,9 @@ Below are some resources that I have found useful related to data science, data 
 
 1. [Peerj - practical data science](https://peerj.com/collections/50-practicaldatascistats/). This is a collection of articles that discuss best practices for data collection and analysis.
 
+1. A guide to [getting RStudio set up on Amazon Web Services](http://strimas.com/r/rstudio-cloud-1/)
+
+1. eLife's [computationally reproducible articles](https://elifesciences.org/labs/ad58f08d/introducing-elife-s-first-computationally-reproducible-article) blend manuscript with editable code and interactive figures. They recommend the use of [Stencila Desktop](), a free online manuscript editor.
 
 ### Courses
 
