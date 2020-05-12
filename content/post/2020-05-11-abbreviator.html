@@ -1,0 +1,68 @@
+---
+title: AbbreviatoR - automatically generate a list of abbreviations from text
+
+author: Daniel Piqué
+date: '2020-05-11'
+slug: abbreviator
+categories:
+  - academia
+tags:
+  - thesis
+  - phd
+  - masters
+  - undergraduate
+  - abbreviations
+  - list of abbreviations
+---
+
+
+
+<p>As I was writing my thesis (nearly 2 years ago now), I came across the following requirement in our school’s thesis guidelines: <img alt = 'eps' width='700' src='/img/phd-guideline-loa.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>I needed a way to generate a list of abbreviations in the text of my thesis. I didn’t want to do this manually for ~280 pages, as it would take a long time and that there was a chance that I would miss some abbreviations. Furthermore, I kept revising my thesis until close to the submission deadline, which meant that I was adding and deleting abbreviations that then needed to be updated in the master abbreviation list. By the end, I just wanted a way to automatically generate an alphabetized list of abbreviations from the text of my thesis.</p>
+<p>I wrote my thesis using Microsoft Word. There are some <a href="https://word.tips.net/T000446_Auto_Creation_of_an_Acronym_List.html">existing approaches</a> to creating a list of abbreviations (using macros) in Word that require some manual annotation (see the end of this post for existing tools). However, I didn’t have the foresight to set this up from the beginning. Word has the option to search for phrases using regex (using “Find and Replace”), but the difficulty was in collecting all these matches and generating an alphabetized list.</p>
+<p><img alt = 'eps' width='400' src='/img/abbrev-find-replace.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>I first attempted to copy-paste directly from my thesis into a plain text file in Sublime text editor. I played around with a few <a href="https://stackoverflow.com/questions/35076016/regex-to-match-acronyms">regex expressions</a> that I found on StackOverflow to capture the abbreviations. Here is a screenshot from one of the earliest regex’s that I tried:</p>
+<p><img alt = 'eps' width='400' src='/img/abbreviator-find-all.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>I used “Find All” after entering the regex to highlight all matches, and then copy-pasted the matches into a new text file. Each match was listed as a new line:</p>
+<p><img alt = 'eps' width='200' src='/img/abbreviator-abbrev.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>Then, I used the “Sort Lines” option, followed by “Permute Lines -&gt; Unique” in Sublime to generate an alphabetized list with unique entries:</p>
+<p><img src="/post/2020-05-11-abbreviator_files/figure-html/unnamed-chunk-1-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>So there we have it! An alphabetized list of abbreviations.</p>
+<p>I then modified the regex to identify abbreviations with multiple capital letters, different punctuation (e.g. periods and dashes), and different string lengths, and ended up with the following expression:</p>
+<blockquote>
+<p>([a-zA-Z].|-){2,}|[a-zA-Z0-9]{0,}[A-Z]{2,}[a-zA-Z0-9-]{0,}|[A-Za-z0-9]{1,}[.-]{0,}[A-Z]{1,}[a-zA-Z0-9]{1,}</p>
+</blockquote>
+<p>The expression is a bit complicated, but it mostly works. I’ll refer you to tutorials on regex if you’d like to learn more.</p>
+<p>While looking at the output after doing “Unique Lines,” I noticed that there were a few entries that were duplicated, but with minor differences in capitalization (e.g. ‘GTEX’ vs ‘GTEx’).</p>
+<p><img alt = 'eps' width='300' src='/img/abbreviator-gtex.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>I then went back into my thesis, did “Ctrl + F” to find all entries that matched ‘GTEX’, and changed them to the desired ‘GTEx’. This list of abbreviations also doubled as a spell-check!</p>
+<p>Now that I had this semi-automated workflow, I wanted to go one step further. I wanted to automatically generate an alphabetized list of abbreviations using <em>any</em> text input (Word, Excel) by directly copy-pasting the text from a document into an app. I basically wanted this app to do the following:</p>
+<ul>
+<li>Accept pasted text from any document type (e.g. word, excel, pdf, etc.)</li>
+<li>Return an alphabetized list of abbreviations</li>
+<li>Have a user-friendly interface</li>
+</ul>
+<p>The end result of this quest was <a href="https://dpique.shinyapps.io/abbreviatoR/">abbreviatoR</a>, a Shiny app that does exactly this. Here’s a screenshot of the UI:</p>
+<p><img alt = 'eps' width='600' src='/img/abbreviator-ui.png' style='display:block;margin-left:auto;margin-right:auto;'/></p>
+<p>Here’s how to use abbreviatoR:</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to <a href="https://dpique.shinyapps.io/abbreviatoR/" class="uri">https://dpique.shinyapps.io/abbreviatoR/</a></p></li>
+<li><p>Modify the regex (if desired) to match specific types of abbreviations.</p></li>
+<li><p>Set the maximum number of characters in a result (e.g. 5 means that the returned abbreviations will be no longer than 5 characters long).</p></li>
+<li><p>Check the box if you are pasting from a word doc with intext citations (there is some code to remove the abbreviations specific to Microsoft Word)</p></li>
+<li><p>Paste your text into the box that says “Paste text here”</p></li>
+</ol>
+<p>Abbreviator will automatically run once it receives input into the text box, and will automatically update if there are any changes in the text input or parameters.</p>
+<p>Copy-pasting the text from my ~280 page thesis into this app returns a list of abbreviations in &lt; 5 seconds!</p>
+<p>I copy-pasted the results from the app back into my thesis under the “List of Abbreviations” section, and manually added a definition for each abbreviation. This saved me a lot of time, as all of the searching for abbreviations was automated.</p>
+<p>That’s all for now! Future directions with this app are to automatically guess the meaning of the abbreviation given its context and nearby words, and to flag abbreviations that are undefined.</p>
+<p>The source code for AbbreviatoR, which can also be run locally, is available on <a href="https://github.com/dpique/abbreviatoR">Github</a>.</p>
+<p>If this post was helpful, or if you have any improved regexs that you’d like to share, please feel free to comment below. If abbreviatoR saves you time, you can <a href="https://ko-fi.com/dpique">buy me a coffee</a> as a thank-you. Thanks!</p>
+<hr />
+<p>Here is a list of existing tools for generating lists of abbreviatons, along with their use cases and limitations:</p>
+<ul>
+<li><p><a href="https://intelligentediting.com/apps/abbreviation-list/" class="uri">https://intelligentediting.com/apps/abbreviation-list/</a> - for Google Docs and Office 2013</p></li>
+<li><p><a href="https://www.dcode.fr/abbreviation-list-generator" class="uri">https://www.dcode.fr/abbreviation-list-generator</a> - This tool was close to what I wanted. Text is copy-pasted into a text box. But it would not detect acronyms that had periods (e.g. would detect “USA” but not “U.S.A.”). The back-end code is also not open source.</p></li>
+<li><p><a href="https://www.thedoctools.com/word-macros-tips/word-macros/extract-acronyms-to-new-document/" class="uri">https://www.thedoctools.com/word-macros-tips/word-macros/extract-acronyms-to-new-document/</a> - specific for creating an acronym list from a word document</p></li>
+<li><p><a href="https://word.tips.net/T000446_Auto_Creation_of_an_Acronym_List.html" class="uri">https://word.tips.net/T000446_Auto_Creation_of_an_Acronym_List.html</a> - also specific for creating an acronym list from a word document</p></li>
+</ul>
