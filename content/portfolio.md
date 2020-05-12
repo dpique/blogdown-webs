@@ -137,6 +137,14 @@ Website: <span style="vertical-align: -6px;">
 
 <img alt = 'dietary sugars' width='600' src='/img/dietary_sugars.png' style='display:block;margin-left:auto;margin-right:auto;'/>
 
+&nbsp;&nbsp;
+
+- **Extrapyramidal Side Effects (EPS) of Antipsychotics** - diagram demonstrating the different extrapyramidal side effects and treatments associated with taking antipsychotic medications. Mnemonics included. <a href="[add link to download ppt here]" target="_blank"> 
+<img alt = 'ppt' width='30' src='https://img.icons8.com/color/144/000000/powerpoint.png'/> 
+</a> </span>
+
+<img alt = 'eps' width='600' src='/img/eps-sympt-orig.png' style='display:block;margin-left:auto;margin-right:auto;'/>
+
 
 ## Other Contributions
 

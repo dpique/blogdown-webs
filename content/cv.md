@@ -4,10 +4,12 @@ title: Curriculum Vitae
 
 Email: dpique1@gmail.com
 
-Education
+Education and Training
 ---------
 
-**2013–2020 (expected)** - Albert Einstein College of Medicine (Bronx, NY), Medical Scientist Training Program
+**2020-2023** - University of California, San Francisco, Pediatrics Resident
+
+**2013–2020** - Albert Einstein College of Medicine (Bronx, NY), Medical Scientist Training Program
 :   **M.D. (Doctor of Medicine)**
 :   **Ph.D. in Systems & Computational Biology** - [Thesis: Deriving novel insights from genomic heterogeneity in cancer](https://pqdtopen.proquest.com/doc/2138296769.html?FMT=ABS)
     
